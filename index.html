@@ -177,6 +177,7 @@
     }
     .section-title i { color: var(--cyan); }
 
+    /* Showcase Card Container */
     .showcase-card {
       margin-bottom: 2.2rem;
       background: var(--card-bg);
@@ -236,6 +237,11 @@
       color: var(--gold); 
       border: 1px solid rgba(245, 158, 11, 0.45); 
     }
+    .badge-dev {
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 242, 254, 0.4);
+    }
 
     .showcase-text {
       color: var(--text-sub);
@@ -280,6 +286,80 @@
     .action-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+    }
+
+    /* Grid for Competencies & Contact */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .skill-box {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .skill-box h4 {
+      color: var(--cyan);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-box ul {
+      list-style: none;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+    .skill-box li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .skill-box li i {
+      color: #38bdf8;
+      font-size: 0.75rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .contact-box {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text-pure);
+      transition: all 0.25s ease;
+    }
+    .contact-box:hover {
+      border-color: var(--cyan);
+      transform: translateY(-3px);
+      background: rgba(20, 32, 60, 0.9);
+    }
+    .contact-box i {
+      font-size: 1.8rem;
+      color: var(--cyan);
+    }
+    .contact-box div strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text-pure);
+    }
+    .contact-box div span {
+      font-size: 0.85rem;
+      color: var(--text-sub);
     }
 
     footer {
@@ -344,11 +424,37 @@
       </div>
     </section>
 
-    <!-- 2. Major Honors & Grants -->
+    <!-- 2. Major Honors & Global Grants -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
 
-      <!-- NASA Space Apps Card (Only Showcase & Activity, No Link) -->
+      <!-- IAYC Grant Card -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0002.jpg" onerror="this.src='card_iayc.jpg'" class="showcase-img" alt="IAYC Spain Full Grant">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">International Astronomical Youth Camp (IAYC) — Spain</div>
+              <div class="showcase-subtitle">The International Workshop for Astronomy e.V. (IWA), Germany</div>
+            </div>
+            <span class="badge badge-gold">Full Grant Winner</span>
+          </div>
+          <p class="showcase-text">
+            Awarded a 100% full grant and official sponsorship invitation to Spain (€1,190.00 EUR coverage), recognizing advanced scientific research application and analytical excellence in astronomy and astrophysics.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Astrophysics Research</span>
+            <span class="tag">Global Representation</span>
+            <span class="tag">Spain 2026</span>
+            <span class="tag">100% Grant</span>
+          </div>
+          <div class="showcase-footer">
+            <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-file-circle-check"></i> View Official Grant & Sponsorship Letter (Drive) ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NASA Space Apps Card -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0003.jpg" class="showcase-img" alt="NASA Space Apps">
         <div class="showcase-body">
@@ -391,7 +497,7 @@
             <span class="tag">Algorithmic Reasoning</span>
           </div>
           <div class="showcase-footer">
-            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-award"></i> View Olympiad Award Verification ↗</a>
+            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-award"></i> View Olympiad Verification (Drive) ↗</a>
           </div>
         </div>
       </div>
@@ -399,7 +505,33 @@
 
     <!-- 3. Production Projects -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-code"></i> Production Applications & Engines</h3>
+      <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
+
+      <!-- Convoy Mobile App Card -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0005.jpg" onerror="this.src='card_convoy_app.jpg'" class="showcase-img" alt="Convoy Mobile App">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">Convoy — Education Consultancy Mobile App</div>
+              <div class="showcase-subtitle">Production Native Android Application</div>
+            </div>
+            <span class="badge badge-live">Live on Google Play</span>
+          </div>
+          <p class="showcase-text">
+            Full-featured production application streamlining overseas educational consultation, student profile evaluation, and institutional matching with 100% offline persistence.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Room DB</span>
+            <span class="tag">Clean Architecture</span>
+          </div>
+          <div class="showcase-footer">
+            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-google-play"></i> Open Google Play Store Listing ↗</a>
+          </div>
+        </div>
+      </div>
 
       <!-- VitalPulse Health Engine -->
       <div class="showcase-card">
@@ -410,16 +542,16 @@
               <div class="showcase-title">VitalPulse — Smart Health & Activity Engine</div>
               <div class="showcase-subtitle">Native Android Architecture Project</div>
             </div>
-            <span class="badge badge-live">In Active Dev</span>
+            <span class="badge badge-dev">In Active Dev</span>
           </div>
           <p class="showcase-text">
-            Modern health management system built with offline-first persistence, reactive Coroutine data flows, biometric sensor metric calculation, and clean MVI patterns.
+            Modern fitness tracking system engineered with an offline-first persistent architecture, SQLite optimizations, Coroutine flows, and metric calculations.
           </p>
           <div class="tag-container">
             <span class="tag">Kotlin</span>
             <span class="tag">Coroutines / Flow</span>
             <span class="tag">MVI Pattern</span>
-            <span class="tag">SQLite / Room</span>
+            <span class="tag">SQLite</span>
           </div>
           <div class="showcase-footer">
             <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Explore Source Architecture ↗</a>
@@ -430,7 +562,7 @@
 
     <!-- 4. Verified Credentials Dossier Section -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Credentials & Accreditations</h3>
+      <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Certifications & Credentials</h3>
 
       <div class="showcase-card">
         <img src="IMG-20261031-WA0007.jpg" class="showcase-img" alt="Credentials Dossier">
@@ -443,7 +575,7 @@
             <span class="badge badge-gold">Verified Repository</span>
           </div>
           <p class="showcase-text">
-            Access the complete collection of verified international certifications including IBM Python for Data Science, UNU-IAS Net Zero 101, UNITAR Climate Action, and Debate Achievements.
+            Access the complete collection of verified international credentials, from IBM Python for Data Science and UNU Net-Zero 101 to climate actions with UNITAR and debate excellence with Sylhet Govt. College Debating Club (SGCDC).
           </p>
           <div class="tag-container">
             <span class="tag">IBM Skills</span>
@@ -455,6 +587,70 @@
             <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-folder-open"></i> Open Complete Google Drive Dossier ↗</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 5. Technical Competencies Section -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
+      
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-mobile-screen"></i> Mobile Engineering</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i> Kotlin & Android SDK</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Jetpack Compose (Declarative UI)</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Room Database & SQLite</li>
+            <li><i class="fa-solid fa-chevron-right"></i> MVVM / MVI Clean Architecture</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-terminal"></i> Tools & Automation</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i> Git & GitHub Version Control</li>
+            <li><i class="fa-solid fa-chevron-right"></i> GitHub Actions (CI/CD Pipelines)</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Linux (Debian OS Environment)</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Python Scripting & Data Modeling</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h4><i class="fa-solid fa-globe"></i> Domain Knowledge</h4>
+          <ul>
+            <li><i class="fa-solid fa-chevron-right"></i> International Education & Advisory</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Remote Sensing & Earth Datasets</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Geographic Information Concepts</li>
+            <li><i class="fa-solid fa-chevron-right"></i> AI Engineering & Generative Workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact Information Section -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
+      
+      <div class="contact-grid">
+        <a href="mailto:alaminhusain425@gmail.com" class="contact-box">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Direct Email</strong>
+            <span>alaminhusain425@gmail.com</span>
+          </div>
+        </a>
+        <a href="tel:+8801346647598" class="contact-box">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Direct Call</strong>
+            <span>+880 1346-647598</span>
+          </div>
+        </a>
+        <a href="https://wa.me/8801309218796" target="_blank" class="contact-box">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div>
+            <strong>WhatsApp (Chat Direct)</strong>
+            <span>+880 1309-218796</span>
+          </div>
+        </a>
       </div>
     </section>
 
