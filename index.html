@@ -8,7 +8,7 @@
   <style>
     :root {
       --bg-base: #060913;
-      --card-bg: rgba(13, 21, 38, 0.90);
+      --card-bg: rgba(13, 21, 38, 0.92);
       --card-border: rgba(56, 189, 248, 0.25);
       --cyan: #00f2fe;
       --emerald: #10b981;
@@ -60,6 +60,7 @@
       padding: 0 1.25rem;
     }
 
+    /* Profile Header */
     .profile-section {
       position: relative;
       margin-top: -90px;
@@ -177,7 +178,7 @@
     }
     .section-title i { color: var(--cyan); }
 
-    /* Showcase Card Container */
+    /* Showcase Photo Card Container */
     .showcase-card {
       margin-bottom: 2.2rem;
       background: var(--card-bg);
@@ -196,79 +197,19 @@
       width: 100%;
       height: auto;
       display: block;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .showcase-body {
-      padding: 1.5rem;
-    }
-    .showcase-meta {
+    .showcase-action-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.4rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.8rem;
       flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .showcase-title {
-      font-size: 1.25rem;
-      color: var(--text-pure);
-      font-weight: 700;
-    }
-    .showcase-subtitle {
-      color: var(--cyan);
-      font-size: 0.95rem;
-      font-weight: 600;
+      gap: 0.8rem;
+      background: rgba(10, 16, 30, 0.95);
     }
 
-    .badge {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 700;
-    }
-    .badge-live { 
-      background: rgba(16, 185, 129, 0.2); 
-      color: #34d399; 
-      border: 1px solid rgba(16, 185, 129, 0.45); 
-    }
-    .badge-gold { 
-      background: rgba(245, 158, 11, 0.2); 
-      color: var(--gold); 
-      border: 1px solid rgba(245, 158, 11, 0.45); 
-    }
-    .badge-dev {
-      background: rgba(0, 242, 254, 0.15);
-      color: var(--cyan);
-      border: 1px solid rgba(0, 242, 254, 0.4);
-    }
-
-    .showcase-text {
-      color: var(--text-sub);
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      background: rgba(24, 34, 58, 0.95);
-      color: #e2e8f0;
-      font-size: 0.82rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      font-weight: 600;
-    }
-
-    .showcase-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      margin-top: 1.2rem;
-      padding-top: 1.1rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
     .action-btn {
       display: inline-flex;
       align-items: center;
@@ -288,7 +229,71 @@
       box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
     }
 
-    /* Grid for Competencies & Contact */
+    /* Text-Only Structured Card (Used for Olympiad) */
+    .text-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .text-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--cyan);
+    }
+    .text-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .text-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-pure);
+    }
+    .text-card-sub {
+      color: var(--cyan);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .text-card-desc {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.1rem;
+    }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .tag {
+      background: rgba(24, 34, 58, 0.95);
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      font-weight: 600;
+    }
+    .badge-gold {
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    /* Technical Competencies Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -296,10 +301,10 @@
       margin-top: 1rem;
     }
     .skill-box {
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(15, 23, 42, 0.85);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 1.2rem;
+      padding: 1.3rem;
     }
     .skill-box h4 {
       color: var(--cyan);
@@ -315,27 +320,28 @@
       font-size: 0.9rem;
     }
     .skill-box li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.5rem;
     }
     .skill-box li i {
-      color: #38bdf8;
+      color: var(--cyan);
       font-size: 0.75rem;
     }
 
+    /* Contact Information Grid */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
+      gap: 1.1rem;
       margin-top: 1rem;
     }
     .contact-box {
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.85);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 1.2rem;
+      padding: 1.3rem;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -346,7 +352,8 @@
     .contact-box:hover {
       border-color: var(--cyan);
       transform: translateY(-3px);
-      background: rgba(20, 32, 60, 0.9);
+      background: rgba(20, 32, 60, 0.95);
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
     }
     .contact-box i {
       font-size: 1.8rem;
@@ -365,7 +372,7 @@
     footer {
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 2.2rem;
+      padding-top: 2.5rem;
       color: var(--text-sub);
       font-size: 0.9rem;
     }
@@ -394,203 +401,91 @@
       </div>
     </div>
 
-    <!-- 1. Experience Section -->
+    <!-- 1. Experience Section (Only Visual Card) -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Current Roles</h3>
       
       <div class="showcase-card">
-        <img src="card_experience.jpg" onerror="this.src='Gemini_Generated_Image_xm13npxm13npxm13.jpeg'" class="showcase-img" alt="Convoy Role">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">Education Consultant & Software Developer</div>
-              <div class="showcase-subtitle">Convoy Education and Immigration</div>
-            </div>
-            <span class="badge badge-live">Active Engagement</span>
-          </div>
-          <p class="showcase-text">
-            Leading native Android mobile architecture and automated client processing for global academic pathways, visa consultancy, and institutional profile evaluation.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Native Android</span>
-            <span class="tag">Workflow Automation</span>
-            <span class="tag">Client Advisory</span>
-            <span class="tag">Kotlin</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-github"></i> View Architecture & Workflows ↗</a>
-          </div>
-        </div>
+        <img src="card_experience.jpg" onerror="this.src='Gemini_Generated_Image_xm13npxm13npxm13.jpeg'" class="showcase-img" alt="Convoy Consultant & Developer">
       </div>
     </section>
 
-    <!-- 2. Major Honors & Global Grants -->
-    <section>
-      <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
-
-      <!-- IAYC Grant Card -->
-      <div class="showcase-card">
-        <img src="IMG-20261031-WA0002.jpg" onerror="this.src='card_iayc.jpg'" class="showcase-img" alt="IAYC Spain Full Grant">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">International Astronomical Youth Camp (IAYC) — Spain</div>
-              <div class="showcase-subtitle">The International Workshop for Astronomy e.V. (IWA), Germany</div>
-            </div>
-            <span class="badge badge-gold">Full Grant Winner</span>
-          </div>
-          <p class="showcase-text">
-            Awarded a 100% full grant and official sponsorship invitation to Spain (€1,190.00 EUR coverage), recognizing advanced scientific research application and analytical excellence in astronomy and astrophysics.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Astrophysics Research</span>
-            <span class="tag">Global Representation</span>
-            <span class="tag">Spain 2026</span>
-            <span class="tag">100% Grant</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-file-circle-check"></i> View Official Grant & Sponsorship Letter (Drive) ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- NASA Space Apps Card -->
-      <div class="showcase-card">
-        <img src="IMG-20261031-WA0003.jpg" class="showcase-img" alt="NASA Space Apps">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">NASA International Space Apps Challenge</div>
-              <div class="showcase-subtitle">Researcher & Developer — AQUA-LENS Project</div>
-            </div>
-            <span class="badge badge-gold">Global Nominee</span>
-          </div>
-          <p class="showcase-text">
-            Engineered satellite-based environmental monitoring models using NASA Earth-observation datasets for automated water quality modeling and aquatic risk detection.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Earth Observation</span>
-            <span class="tag">Remote Sensing</span>
-            <span class="tag">AQUA-LENS</span>
-            <span class="tag">Climate Analytics</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Math Olympiad Card -->
-      <div class="showcase-card">
-        <img src="IMG-20261031-WA0004.jpg" class="showcase-img" alt="Math Olympiad">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">Bangladesh Mathematical Olympiad 2025</div>
-              <div class="showcase-subtitle">Secondary Category Winner (DBBL & Prothom Alo)</div>
-            </div>
-            <span class="badge badge-gold">Olympiad Winner</span>
-          </div>
-          <p class="showcase-text">
-            Recognized for outstanding quantitative deduction, high-speed mathematical logic, and advanced algorithmic problem-solving competence.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Competitive Logic</span>
-            <span class="tag">Number Theory</span>
-            <span class="tag">Algorithmic Reasoning</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-award"></i> View Olympiad Verification (Drive) ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Production Projects -->
+    <!-- 2. Featured Production Projects (Convoy App Top) -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
 
-      <!-- Convoy Mobile App Card -->
+      <!-- Convoy Mobile App (Sobar Upore) -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0005.jpg" onerror="this.src='card_convoy_app.jpg'" class="showcase-img" alt="Convoy Mobile App">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">Convoy — Education Consultancy Mobile App</div>
-              <div class="showcase-subtitle">Production Native Android Application</div>
-            </div>
-            <span class="badge badge-live">Live on Google Play</span>
-          </div>
-          <p class="showcase-text">
-            Full-featured production application streamlining overseas educational consultation, student profile evaluation, and institutional matching with 100% offline persistence.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">Room DB</span>
-            <span class="tag">Clean Architecture</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-google-play"></i> Open Google Play Store Listing ↗</a>
-          </div>
+        <div class="showcase-action-bar">
+          <span style="color: #34d399; font-weight: 700; font-size: 0.92rem;"><i class="fa-brands fa-google-play"></i> Live Production Mobile Application</span>
+          <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-google-play"></i> Open Google Play Store ↗</a>
         </div>
       </div>
 
       <!-- VitalPulse Health Engine -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0006.jpg" class="showcase-img" alt="VitalPulse Engine">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">VitalPulse — Smart Health & Activity Engine</div>
-              <div class="showcase-subtitle">Native Android Architecture Project</div>
-            </div>
-            <span class="badge badge-dev">In Active Dev</span>
-          </div>
-          <p class="showcase-text">
-            Modern fitness tracking system engineered with an offline-first persistent architecture, SQLite optimizations, Coroutine flows, and metric calculations.
-          </p>
-          <div class="tag-container">
-            <span class="tag">Kotlin</span>
-            <span class="tag">Coroutines / Flow</span>
-            <span class="tag">MVI Pattern</span>
-            <span class="tag">SQLite</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Explore Source Architecture ↗</a>
-          </div>
+        <div class="showcase-action-bar">
+          <span style="color: var(--cyan); font-weight: 700; font-size: 0.92rem;"><i class="fa-solid fa-heart-pulse"></i> In Active Dev — Smart Engine</span>
+          <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Source Architecture ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- 4. Verified Credentials Dossier Section -->
+    <!-- 3. Major Honors & Global Grants -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
+
+      <!-- IAYC Grant Card (Ekbar E, With Drive Link) -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0002.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80';" class="showcase-img" alt="IAYC Spain Full Grant">
+        <div class="showcase-action-bar">
+          <span style="color: var(--gold); font-weight: 700; font-size: 0.92rem;"><i class="fa-solid fa-medal"></i> 100% Full Grant Recipient (€1,190.00 EUR Coverage)</span>
+          <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-file-circle-check"></i> View Official Grant & Sponsorship Letter (Drive) ↗</a>
+        </div>
+      </div>
+
+      <!-- NASA Space Apps Card (Nijer Card-e, No Link) -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0003.jpg" class="showcase-img" alt="NASA Space Apps Challenge">
+      </div>
+
+      <!-- Bangladesh Mathematical Olympiad (Alada Clean Text Card) -->
+      <div class="text-card">
+        <div class="text-card-header">
+          <div class="text-card-title">Bangladesh Mathematical Olympiad 2025</div>
+          <span class="badge-gold"><i class="fa-solid fa-trophy"></i> Olympiad Winner</span>
+        </div>
+        <div class="text-card-sub">Secondary Category Winner (Dutch-Bangla Bank & Prothom Alo)</div>
+        <p class="text-card-desc">
+          Recognized for outstanding quantitative deduction, high-speed mathematical logic, and advanced algorithmic problem-solving competence.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Competitive Logic</span>
+          <span class="tag">Number Theory</span>
+          <span class="tag">Algorithmic Reasoning</span>
+        </div>
+        <div style="display: flex; justify-content: flex-end; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+          <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-award"></i> View Olympiad Award Verification (Drive) ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Verified Certifications & Credentials -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Certifications & Credentials</h3>
 
       <div class="showcase-card">
         <img src="IMG-20261031-WA0007.jpg" class="showcase-img" alt="Credentials Dossier">
-        <div class="showcase-body">
-          <div class="showcase-meta">
-            <div>
-              <div class="showcase-title">Global Academic Credentials & Certifications Dossier</div>
-              <div class="showcase-subtitle">Direct Google Drive Repository</div>
-            </div>
-            <span class="badge badge-gold">Verified Repository</span>
-          </div>
-          <p class="showcase-text">
-            Access the complete collection of verified international credentials, from IBM Python for Data Science and UNU Net-Zero 101 to climate actions with UNITAR and debate excellence with Sylhet Govt. College Debating Club (SGCDC).
-          </p>
-          <div class="tag-container">
-            <span class="tag">IBM Skills</span>
-            <span class="tag">United Nations (UNU-IAS)</span>
-            <span class="tag">UNITAR</span>
-            <span class="tag">SGCDC Debate</span>
-          </div>
-          <div class="showcase-footer">
-            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-folder-open"></i> Open Complete Google Drive Dossier ↗</a>
-          </div>
+        <div class="showcase-action-bar">
+          <span style="color: var(--text-sub); font-size: 0.92rem;"><i class="fa-solid fa-shield-halved"></i> IBM, UNU-IAS, UNITAR, SGCDC</span>
+          <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #0284c7, var(--cyan)); color: #03101e;"><i class="fa-solid fa-folder-open"></i> Open Complete Google Drive Dossier ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- 5. Technical Competencies Section -->
+    <!-- 5. Technical Competencies -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
       
@@ -625,7 +520,7 @@
       </div>
     </section>
 
-    <!-- 6. Contact Information Section -->
+    <!-- 6. Contact Information -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
       
