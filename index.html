@@ -8,20 +8,13 @@
   <style>
     :root {
       --bg-base: #060913;
-      --card-bg: rgba(13, 21, 38, 0.85);
+      --card-bg: rgba(13, 21, 38, 0.90);
       --card-border: rgba(56, 189, 248, 0.25);
-      
-      /* Vibrant Psychological Accents */
       --cyan: #00f2fe;
-      --blue: #4facfe;
       --emerald: #10b981;
-      --green-glow: #05df72;
       --coral-red: #ff4b72;
-      --amber: #f59e0b;
-      --purple: #8b5cf6;
-
-      --text-white: #ffffff;
-      --text-bright: #f8fafc;
+      --gold: #fbbf24;
+      --text-pure: #ffffff;
       --text-sub: #cbd5e1;
     }
 
@@ -30,7 +23,6 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       background-color: var(--bg-base);
-      /* Psychological Vibrant Multi-Color Glow Mesh */
       background-image: 
         radial-gradient(circle at 10% 15%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 90% 20%, rgba(255, 75, 114, 0.14) 0%, transparent 45%),
@@ -38,16 +30,15 @@
         radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.14) 0%, transparent 40%),
         radial-gradient(circle at 85% 90%, rgba(79, 172, 254, 0.15) 0%, transparent 45%);
       background-attachment: fixed;
-      color: var(--text-bright);
+      color: var(--text-pure);
       line-height: 1.6;
       padding-bottom: 5rem;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Vibrant Banner */
     .banner {
       width: 100%;
-      height: 290px;
+      height: 280px;
       background: url('IMG-20261031-WA0001.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
@@ -64,12 +55,11 @@
     }
 
     .container {
-      max-width: 920px;
+      max-width: 940px;
       margin: 0 auto;
       padding: 0 1.25rem;
     }
 
-    /* Profile Header */
     .profile-section {
       position: relative;
       margin-top: -90px;
@@ -103,36 +93,33 @@
       gap: 0.45rem;
       background: rgba(16, 185, 129, 0.15);
       border: 1px solid rgba(16, 185, 129, 0.45);
-      color: var(--green-glow);
+      color: #34d399;
       font-size: 0.82rem;
       font-weight: 700;
       padding: 0.3rem 0.9rem;
       border-radius: 20px;
       margin-top: 1.1rem;
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
     }
     .status-pill::before {
       content: '';
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--green-glow);
-      box-shadow: 0 0 10px var(--green-glow);
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
     }
 
     h1 {
       font-size: 2.4rem;
       margin-top: 0.6rem;
-      color: var(--text-white);
+      color: var(--text-pure);
       font-weight: 800;
-      letter-spacing: -0.5px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     .headline {
       background: linear-gradient(90deg, var(--cyan), #93c5fd);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-top: 0.25rem;
     }
@@ -140,7 +127,6 @@
       color: var(--text-sub);
       font-size: 0.95rem;
       margin-top: 0.35rem;
-      font-weight: 500;
     }
 
     .cta-buttons {
@@ -166,36 +152,22 @@
       color: #03101e; 
       box-shadow: 0 4px 18px rgba(0, 242, 254, 0.35);
     }
-    .btn-primary:hover { 
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(0, 242, 254, 0.55);
-    }
     .btn-whatsapp { 
       background: linear-gradient(135deg, #059669, var(--emerald)); 
       color: #ffffff; 
       box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
     }
-    .btn-whatsapp:hover { 
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(16, 185, 129, 0.55);
-    }
     .btn-outline { 
       background: rgba(15, 23, 42, 0.7); 
-      color: var(--text-white); 
+      color: var(--text-pure); 
       border: 1px solid var(--card-border);
       backdrop-filter: blur(10px);
-    }
-    .btn-outline:hover { 
-      background: rgba(30, 41, 59, 0.9);
-      border-color: var(--cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.25);
     }
 
     section { margin-bottom: 3.5rem; }
     .section-title {
       font-size: 1.4rem;
-      color: var(--text-white);
+      color: var(--text-pure);
       margin-bottom: 1.4rem;
       display: flex;
       align-items: center;
@@ -203,47 +175,57 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
       padding-bottom: 0.7rem;
     }
-    .section-title i { 
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.35rem; 
-    }
+    .section-title i { color: var(--cyan); }
 
-    /* Crisp High-Contrast Glass Card */
-    .card {
+    /* Complete Visual-Rich Card Container */
+    .showcase-card {
+      margin-bottom: 2.2rem;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 14px;
-      padding: 1.55rem;
-      margin-bottom: 1.25rem;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      transition: transform 0.25s ease, border-color 0.25s ease;
     }
-    .card:hover {
-      border-color: rgba(0, 242, 254, 0.5);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.18);
+    .showcase-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cyan);
+      box-shadow: 0 12px 35px rgba(0, 242, 254, 0.22);
     }
-    .card-header {
+    .showcase-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .showcase-body {
+      padding: 1.5rem;
+    }
+    .showcase-meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    .card-title { font-size: 1.25rem; color: var(--text-white); font-weight: 700; }
-    .card-subtitle { color: var(--cyan); font-size: 0.98rem; font-weight: 600; margin-top: 0.2rem; }
-    
+    .showcase-title {
+      font-size: 1.25rem;
+      color: var(--text-pure);
+      font-weight: 700;
+    }
+    .showcase-subtitle {
+      color: var(--cyan);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
     .badge {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-weight: 700;
-      letter-spacing: 0.3px;
     }
     .badge-live { 
       background: rgba(16, 185, 129, 0.2); 
@@ -252,22 +234,18 @@
     }
     .badge-gold { 
       background: rgba(245, 158, 11, 0.2); 
-      color: #fbbf24; 
+      color: var(--gold); 
       border: 1px solid rgba(245, 158, 11, 0.45); 
     }
-    .badge-red {
-      background: rgba(255, 75, 114, 0.2);
-      color: #ff6b8b;
-      border: 1px solid rgba(255, 75, 114, 0.45);
+
+    .showcase-text {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
-    .card p {
-      color: var(--text-sub) !important;
-      font-size: 0.96rem;
-      line-height: 1.65;
-    }
-
-    .tag-container { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
     .tag {
       background: rgba(24, 34, 58, 0.95);
       color: #e2e8f0;
@@ -278,133 +256,30 @@
       font-weight: 600;
     }
 
-    .card-btn {
+    .showcase-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.1rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .action-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--cyan);
+      color: #03101e;
+      background: linear-gradient(135deg, #0284c7, var(--cyan));
       text-decoration: none;
+      font-weight: 700;
       font-size: 0.92rem;
-      font-weight: 700;
-      margin-top: 1rem;
-      transition: all 0.2s ease;
-    }
-    .card-btn:hover { 
-      gap: 0.75rem; 
-      color: #ffffff;
-      text-shadow: 0 0 10px var(--cyan);
-    }
-
-    /* Certifications Grid */
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-      gap: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .cert-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      border-radius: 12px;
-      padding: 1.3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 0.55rem 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
       transition: all 0.25s ease;
     }
-    .cert-card:hover {
-      border-color: rgba(255, 75, 114, 0.45);
+    .action-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 75, 114, 0.15);
-    }
-    .cert-issuer {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--cyan);
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-    }
-    .cert-name {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--text-white);
-      line-height: 1.45;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-    }
-    .skill-category {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      border-radius: 12px;
-      padding: 1.35rem;
-    }
-    .skill-category h4 {
-      font-size: 1.05rem;
-      color: var(--cyan);
-      margin-bottom: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-weight: 700;
-    }
-    .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-items span {
-      background: rgba(10, 17, 33, 0.95);
-      border: 1px solid rgba(56, 189, 248, 0.22);
-      font-size: 0.85rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-      color: var(--text-white);
-      font-weight: 600;
-    }
-
-    /* Contacts Grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-      gap: 1.2rem;
-    }
-    .contact-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      border-radius: 12px;
-      padding: 1.35rem;
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-      transition: all 0.25s ease;
-    }
-    .contact-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(0, 242, 254, 0.25);
-    }
-    .contact-card i {
-      font-size: 1.8rem;
-      color: var(--cyan);
-    }
-    .contact-info p { font-size: 0.82rem; color: var(--text-sub); font-weight: 600; }
-    .contact-info a { 
-      color: var(--text-white); 
-      text-decoration: none; 
-      font-size: 1rem; 
-      font-weight: 700; 
-      word-break: break-all; 
-    }
-    .contact-info a:hover { color: var(--cyan); }
-
-    .action-dossier-box {
-      text-align: center;
-      margin-top: 1.6rem;
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
     }
 
     footer {
@@ -413,7 +288,6 @@
       padding-top: 2.2rem;
       color: var(--text-sub);
       font-size: 0.9rem;
-      font-weight: 500;
     }
   </style>
 </head>
@@ -440,228 +314,148 @@
       </div>
     </div>
 
-    <!-- Professional Experience -->
+    <!-- 1. Experience Section -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Current Roles</h3>
       
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Education Consultant & Software Developer</div>
-            <div class="card-subtitle">Convoy Education and Immigration</div>
+      <div class="showcase-card">
+        <img src="card_experience.jpg" onerror="this.src='Gemini_Generated_Image_xm13npxm13npxm13.jpeg'" class="showcase-img" alt="Convoy Role">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">Education Consultant & Software Developer</div>
+              <div class="showcase-subtitle">Convoy Education and Immigration</div>
+            </div>
+            <span class="badge badge-live">Active Engagement</span>
           </div>
-          <span class="badge badge-live">Active Engagement</span>
-        </div>
-        <p>
-          Leading native Android application development for automated client processing and student workflows, while assisting prospective international students with global university pathways and immigration advisory.
-        </p>
-        <div class="tag-container">
-          <span class="tag">Native Android</span>
-          <span class="tag">Education Consulting</span>
-          <span class="tag">Client Consultation</span>
-          <span class="tag">Workflow Automation</span>
+          <p class="showcase-text">
+            Leading native Android mobile architecture and automated client processing for global academic pathways, visa consultancy, and institutional profile evaluation.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Native Android</span>
+            <span class="tag">Workflow Automation</span>
+            <span class="tag">Client Advisory</span>
+            <span class="tag">Kotlin</span>
+          </div>
+          <div class="showcase-footer">
+            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-github"></i> View Architecture & Workflows ↗</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Key Honors & Grants -->
+    <!-- 2. Major Honors & Grants -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
 
-      <div class="card" style="border-left: 4px solid var(--amber);">
-        <div class="card-header">
-          <div>
-            <div class="card-title">International Astronomy Youth Camp (IAYC) — Spain</div>
-            <div class="card-subtitle">Full Grant Recipient (€1,190.00 EUR Coverage)</div>
+      <!-- NASA Space Apps Card -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0003.jpg" class="showcase-img" alt="NASA Space Apps">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">NASA International Space Apps Challenge</div>
+              <div class="showcase-subtitle">Researcher & Developer — AQUA-LENS Project</div>
+            </div>
+            <span class="badge badge-gold">Global Nominee</span>
           </div>
-          <span class="badge badge-gold">Full Grant Winner</span>
-        </div>
-        <p>
-          Awarded a 100% full grant and official sponsorship invitation from <strong>The International Workshop for Astronomy (IWA) e.V.</strong> (Germany) to attend IAYC in Spain, recognizing scientific research application and analytical excellence.
-        </p>
-        <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" class="card-btn" target="_blank">
-          <i class="fa-solid fa-file-circle-check"></i> View Official Grant & Sponsorship Letter ↗
-        </a>
-      </div>
-
-      <div class="card" style="border-left: 4px solid var(--cyan);">
-        <div class="card-header">
-          <div>
-            <div class="card-title">NASA International Space Apps Challenge</div>
-            <div class="card-subtitle">Researcher & Developer — AQUA-LENS Project</div>
+          <p class="showcase-text">
+            Engineered satellite-based environmental monitoring models using NASA Earth-observation datasets for automated water quality modeling and aquatic risk detection.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Earth Observation</span>
+            <span class="tag">Remote Sensing</span>
+            <span class="tag">AQUA-LENS</span>
+            <span class="tag">Python</span>
           </div>
-          <span class="badge badge-gold">Global Nominee</span>
-        </div>
-        <p>
-          Formulated satellite-driven aquatic security algorithms with earth-observation datasets for automated environmental and water quality modeling.
-        </p>
-      </div>
-
-      <div class="card" style="border-left: 4px solid var(--coral-red);">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Bangladesh Mathematical Olympiad 2025</div>
-            <div class="card-subtitle">Secondary Category Round Winner (Dutch-Bangla Bank & Prothom Alo)</div>
+          <div class="showcase-footer">
+            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-file-shield"></i> View NASA Verification Document ↗</a>
           </div>
-          <span class="badge badge-red">Olympiad Winner</span>
-        </div>
-        <p>
-          Demonstrated competitive mathematical deduction, quantitative logic, and high-pressure problem-solving competence.
-        </p>
-      </div>
-    </section>
-
-    <!-- Production Projects -->
-    <section>
-      <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Convoy — Education Consultancy Mobile App</div>
-            <div class="card-subtitle">Production Native Android App</div>
-          </div>
-          <span class="badge badge-live">Live on Google Play</span>
-        </div>
-        <p>
-          Full-featured production application streamlining overseas educational consultation, student profile evaluation, and institutional matching.
-        </p>
-        <div class="tag-container">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Jetpack Compose</span>
-          <span class="tag">Room DB</span>
-          <span class="tag">Clean Architecture</span>
-        </div>
-        <a href="#" class="card-btn" target="_blank"><i class="fa-brands fa-google-play" style="color: var(--emerald);"></i> Open Google Play Store Listing &rarr;</a>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">VitalPulse — Smart Health & Activity Engine</div>
-            <div class="card-subtitle">Native Android Architecture Project</div>
-          </div>
-          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.2); color: var(--cyan); border-color: rgba(56, 189, 248, 0.45);">In Active Dev</span>
-        </div>
-        <p>
-          Modern fitness tracking system engineered with an offline-first persistent architecture, SQLite optimizations, Coroutine flows, and metric calculations.
-        </p>
-        <div class="tag-container">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Coroutines / Flow</span>
-          <span class="tag">MVI Pattern</span>
-          <span class="tag">SQLite</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Verified Certifications Grid -->
-    <section>
-      <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Certifications</h3>
-      
-      <div class="cert-grid">
-        <div class="cert-card">
-          <div class="cert-issuer">IBM Developer Skills Network</div>
-          <div class="cert-name">Python 101 for Data Science</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-issuer">United Nations University (UNU-IAS)</div>
-          <div class="cert-name">Net Zero 101: What, Why and How</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-issuer">UNITAR & UN CC:Learn</div>
-          <div class="cert-name">Climate Change: From Learning to Action</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-issuer">UNITAR & UN Women (EmPower)</div>
-          <div class="cert-name">Gender Equality in Climate Action & Renewable Energy</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-issuer">UNITAR</div>
-          <div class="cert-name">Introduction to Sustainable Development in Practice</div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-issuer">Sylhet Govt. College Debating Club</div>
-          <div class="cert-name">Outstanding Performance & Active Debate Membership</div>
         </div>
       </div>
 
-      <div class="action-dossier-box">
-        <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" class="btn btn-outline" target="_blank" style="padding: 0.85rem 1.8rem; font-size: 0.98rem;">
-          <i class="fa-solid fa-folder-open" style="color: var(--cyan);"></i> View Full ECA & Credentials Dossier (Google Drive) ↗
-        </a>
-      </div>
-    </section>
-
-    <!-- Technical Competencies -->
-    <section>
-      <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4><i class="fa-solid fa-mobile-screen"></i> Mobile Engineering</h4>
-          <div class="skill-items">
-            <span>Kotlin</span>
-            <span>Jetpack Compose</span>
-            <span>Android SDK</span>
-            <span>Room DB</span>
-            <span>SQLite</span>
-            <span>MVVM / MVI</span>
+      <!-- Math Olympiad Card -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0004.jpg" class="showcase-img" alt="Math Olympiad">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">Bangladesh Mathematical Olympiad 2025</div>
+              <div class="showcase-subtitle">Secondary Category Winner (DBBL & Prothom Alo)</div>
+            </div>
+            <span class="badge badge-gold">Olympiad Winner</span>
           </div>
-        </div>
-
-        <div class="skill-category">
-          <h4><i class="fa-solid fa-terminal"></i> Tools & Automation</h4>
-          <div class="skill-items">
-            <span>Git & GitHub</span>
-            <span>GitHub Actions CI/CD</span>
-            <span>Linux (Debian)</span>
-            <span>Python</span>
-            <span>Prompt Engineering</span>
+          <p class="showcase-text">
+            Recognized for outstanding quantitative deduction, high-speed mathematical logic, and advanced algorithmic problem-solving competence.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Competitive Logic</span>
+            <span class="tag">Number Theory</span>
+            <span class="tag">Algorithmic Reasoning</span>
           </div>
-        </div>
-
-        <div class="skill-category">
-          <h4><i class="fa-solid fa-globe"></i> Domain Knowledge</h4>
-          <div class="skill-items">
-            <span>International Education</span>
-            <span>Remote Sensing</span>
-            <span>Geographic Systems</span>
-            <span>AI Modeling Workflows</span>
+          <div class="showcase-footer">
+            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-award"></i> View Olympiad Award Verification ↗</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Details -->
+    <!-- 3. Production Projects -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <i class="fa-solid fa-envelope" style="color: var(--cyan);"></i>
-          <div class="contact-info">
-            <p>Direct Email</p>
-            <a href="mailto:alaminhusain425@gmail.com">alaminhusain425@gmail.com</a>
+      <h3 class="section-title"><i class="fa-solid fa-code"></i> Production Applications & Engines</h3>
+
+      <!-- VitalPulse Health Engine -->
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0006.jpg" class="showcase-img" alt="VitalPulse Engine">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">VitalPulse — Smart Health & Activity Engine</div>
+              <div class="showcase-subtitle">Native Android Architecture Project</div>
+            </div>
+            <span class="badge badge-live">In Active Dev</span>
+          </div>
+          <p class="showcase-text">
+            Modern health management system built with offline-first persistence, reactive Coroutine data flows, biometric sensor metric calculation, and clean MVI patterns.
+          </p>
+          <div class="tag-container">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Coroutines / Flow</span>
+            <span class="tag">MVI Pattern</span>
+            <span class="tag">SQLite / Room</span>
+          </div>
+          <div class="showcase-footer">
+            <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Explore Source Architecture ↗</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="contact-card">
-          <i class="fa-solid fa-phone" style="color: var(--coral-red);"></i>
-          <div class="contact-info">
-            <p>Direct Call</p>
-            <a href="tel:+8801346647598">+880 1346-647598</a>
+    <!-- 4. Verified Credentials Dossier Section -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Credentials & Accreditations</h3>
+
+      <div class="showcase-card">
+        <img src="IMG-20261031-WA0007.jpg" class="showcase-img" alt="Credentials Dossier">
+        <div class="showcase-body">
+          <div class="showcase-meta">
+            <div>
+              <div class="showcase-title">Global Academic Credentials & Certifications Dossier</div>
+              <div class="showcase-subtitle">Direct Google Drive Repository</div>
+            </div>
+            <span class="badge badge-gold">Verified Repository</span>
           </div>
-        </div>
-
-        <div class="contact-card">
-          <i class="fa-brands fa-whatsapp" style="color: var(--green-glow);"></i>
-          <div class="contact-info">
-            <p>WhatsApp (Chat Direct)</p>
-            <a href="https://wa.me/8801309218796" target="_blank">+880 1309-218796</a>
+          <p class="showcase-text">
+            Access the complete collection of verified international certifications including IBM Python for Data Science, UNU-IAS Net Zero 101, UNITAR Climate Action, and Debate Achievements.
+          </p>
+          <div class="tag-container">
+            <span class="tag">IBM Skills</span>
+            <span class="tag">United Nations (UNU-IAS)</span>
+            <span class="tag">UNITAR</span>
+            <span class="tag">SGCDC Debate</span>
+          </div>
+          <div class="showcase-footer">
+            <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-folder-open"></i> Open Complete Google Drive Dossier ↗</a>
           </div>
         </div>
       </div>
