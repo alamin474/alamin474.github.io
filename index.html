@@ -14,6 +14,7 @@
       --emerald: #10b981;
       --coral-red: #ff4b72;
       --gold: #fbbf24;
+      --telegram: #229ED9;
       --text-pure: #ffffff;
       --text-sub: #cbd5e1;
     }
@@ -158,11 +159,10 @@
       color: #ffffff; 
       box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
     }
-    .btn-outline { 
-      background: rgba(15, 23, 42, 0.7); 
-      color: var(--text-pure); 
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(10px);
+    .btn-telegram { 
+      background: linear-gradient(135deg, #0288d1, var(--telegram)); 
+      color: #ffffff; 
+      box-shadow: 0 4px 18px rgba(34, 158, 217, 0.4);
     }
 
     section { margin-bottom: 3.5rem; }
@@ -210,6 +210,43 @@
       background: rgba(10, 16, 30, 0.95);
     }
 
+    /* Testing Instruction Box */
+    .testing-guide {
+      background: rgba(15, 23, 42, 0.85);
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 1.2rem 1.4rem;
+    }
+    .guide-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .testing-steps {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 1.1rem;
+    }
+    .testing-steps li {
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .testing-steps li i {
+      color: #38bdf8;
+      margin-top: 0.25rem;
+    }
+    .testing-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
     .action-btn {
       display: inline-flex;
       align-items: center;
@@ -229,7 +266,27 @@
       box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
     }
 
-    /* Text-Only Structured Card (Used for Olympiad) */
+    .action-btn-group {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+    }
+    .action-btn-group:hover {
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.55);
+      color: #ffffff;
+    }
+
+    .action-btn-play {
+      background: linear-gradient(135deg, #059669, var(--emerald));
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+    }
+    .action-btn-play:hover {
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.55);
+      color: #ffffff;
+    }
+
+    /* Text-Only Structured Card (Olympiad) */
     .text-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -293,7 +350,7 @@
       font-weight: 700;
     }
 
-    /* Technical Competencies Grid */
+    /* Competencies Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -397,11 +454,11 @@
       <div class="cta-buttons">
         <a href="mailto:alaminhusain425@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
         <a href="https://wa.me/8801309218796" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://github.com/alamin474" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+        <a href="https://t.me/ExploreWithAlamin" target="_blank" class="btn btn-telegram"><i class="fa-brands fa-telegram"></i> Telegram Channel</a>
       </div>
     </div>
 
-    <!-- 1. Experience Section (Only Visual Card) -->
+    <!-- 1. Experience Section -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Current Roles</h3>
       
@@ -414,12 +471,22 @@
     <section>
       <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
 
-      <!-- Convoy Mobile App (Sobar Upore) -->
+      <!-- Convoy Mobile App (Sobar Upore With Closed Testing Steps) -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0005.jpg" onerror="this.src='card_convoy_app.jpg'" class="showcase-img" alt="Convoy Mobile App">
-        <div class="showcase-action-bar">
-          <span style="color: #34d399; font-weight: 700; font-size: 0.92rem;"><i class="fa-brands fa-google-play"></i> Live Production Mobile Application</span>
-          <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-brands fa-google-play"></i> Open Google Play Store ↗</a>
+        
+        <div class="testing-guide">
+          <div class="guide-title"><i class="fa-solid fa-flask-vial"></i> Convoy App Closed Testing Instructions</div>
+          <ul class="testing-steps">
+            <li><i class="fa-solid fa-circle-check"></i> <strong>প্রয়োজনীয় শর্ত:</strong> আপনার গুগল ক্রোম ব্রাউজার ও গুগল প্লে স্টোরে একই জিমেইল (Gmail) অ্যাকাউন্ট লগইন থাকতে হবে।</li>
+            <li><i class="fa-solid fa-1"></i> <strong>ধাপ ১:</strong> প্রথমে নিচে থাকা "Join Google Group" বাটনে ক্লিক করে আমাদের অফিসিয়াল টেস্টার গ্রুপে যুক্ত হোন।</li>
+            <li><i class="fa-solid fa-2"></i> <strong>ধাপ ২:</strong> গ্রুপে জয়েন হওয়ার পর "Become a Tester & Download" বাটনে ক্লিক করে অপ্ট-ইন (Opt-in) কনফার্ম করুন এবং সরাসরি Play Store থেকে অ্যাপটি ইনস্টল করুন।</li>
+          </ul>
+
+          <div class="testing-buttons">
+            <a href="https://groups.google.com/g/ma-devoloper" target="_blank" class="action-btn action-btn-group"><i class="fa-solid fa-users"></i> Step 1: Join Google Group ↗</a>
+            <a href="https://play.google.com/apps/testing/com.aistudio.convoy.study" target="_blank" class="action-btn action-btn-play"><i class="fa-brands fa-google-play"></i> Step 2: Become Tester & Download ↗</a>
+          </div>
         </div>
       </div>
 
@@ -428,7 +495,7 @@
         <img src="IMG-20261031-WA0006.jpg" class="showcase-img" alt="VitalPulse Engine">
         <div class="showcase-action-bar">
           <span style="color: var(--cyan); font-weight: 700; font-size: 0.92rem;"><i class="fa-solid fa-heart-pulse"></i> In Active Dev — Smart Engine</span>
-          <a href="https://github.com/alamin474" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Source Architecture ↗</a>
+          <a href="https://t.me/ExploreWithAlamin" target="_blank" class="action-btn"><i class="fa-solid fa-code-branch"></i> Follow Updates (Telegram) ↗</a>
         </div>
       </div>
     </section>
@@ -437,7 +504,7 @@
     <section>
       <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
 
-      <!-- IAYC Grant Card (Ekbar E, With Drive Link) -->
+      <!-- IAYC Grant Card -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0002.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80';" class="showcase-img" alt="IAYC Spain Full Grant">
         <div class="showcase-action-bar">
@@ -446,12 +513,12 @@
         </div>
       </div>
 
-      <!-- NASA Space Apps Card (Nijer Card-e, No Link) -->
+      <!-- NASA Space Apps Card (Showcase only, No Button) -->
       <div class="showcase-card">
         <img src="IMG-20261031-WA0003.jpg" class="showcase-img" alt="NASA Space Apps Challenge">
       </div>
 
-      <!-- Bangladesh Mathematical Olympiad (Alada Clean Text Card) -->
+      <!-- Bangladesh Mathematical Olympiad (Clean Text Card) -->
       <div class="text-card">
         <div class="text-card-header">
           <div class="text-card-title">Bangladesh Mathematical Olympiad 2025</div>
@@ -544,6 +611,13 @@
           <div>
             <strong>WhatsApp (Chat Direct)</strong>
             <span>+880 1309-218796</span>
+          </div>
+        </a>
+        <a href="https://t.me/ExploreWithAlamin" target="_blank" class="contact-box">
+          <i class="fa-brands fa-telegram" style="color: var(--telegram);"></i>
+          <div>
+            <strong>Telegram Channel</strong>
+            <span>@ExploreWithAlamin</span>
           </div>
         </a>
       </div>
