@@ -3,97 +3,445 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md. Al Amin | Android & Mobile Application Developer</title>
+  <title>Md. Al Amin | Software Developer & Tech Innovator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
       --accent: #38bdf8;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --success: #34d399;
+      --gold: #fbbf24;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
-    .container { max-width: 800px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 3rem; }
-    h1 { font-size: 2.25rem; color: #fff; margin-bottom: 0.5rem; }
-    .subtitle { color: var(--accent); font-weight: 500; font-size: 1.1rem; }
-    .bio { color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; }
-    .btn-group { margin-top: 1.25rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .btn { background-color: var(--accent); color: #000; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
-    .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-    h2 { font-size: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; margin: 2rem 0 1rem; color: var(--accent); }
-    .card { background-color: var(--card-bg); border: 1px solid #334155; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; }
-    .card h3 { margin-bottom: 0.25rem; color: #fff; }
-    .tag { display: inline-block; background: #334155; color: #e2e8f0; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.4rem; margin-top: 0.5rem; }
-    .links { margin-top: 0.75rem; }
-    .links a { color: var(--accent); text-decoration: none; font-size: 0.85rem; margin-right: 1rem; font-weight: 500; }
-    ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    ul li { background: var(--card-bg); border: 1px solid #334155; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; }
-    footer { text-align: center; margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 4rem;
+    }
+    .banner {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      position: relative;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .profile-section {
+      position: relative;
+      margin-top: -75px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .avatar-wrapper {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--bg);
+      background-color: #1e293b;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .avatar-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 3.5rem;
+      color: var(--accent);
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 1rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    .headline {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+    .location-tag {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+    .cta-buttons {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #04101e; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-whatsapp { background: #22c55e; color: #fff; }
+    .btn-whatsapp:hover { background: #16a34a; }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
+    .btn-outline:hover { background: #1f2937; }
+
+    section { margin-bottom: 3rem; }
+    .section-title {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.5rem;
+    }
+    .section-title i { color: var(--accent); font-size: 1.2rem; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1.35rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: #374151;
+      transform: translateY(-2px);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card-title { font-size: 1.15rem; color: #fff; font-weight: 600; }
+    .card-subtitle { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .badge-live { background: rgba(52, 211, 153, 0.15); color: var(--success); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-gold { background: rgba(251, 191, 36, 0.15); color: var(--gold); border: 1px solid rgba(251, 191, 36, 0.3); }
+
+    .tag-container { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      background: #1f2937;
+      color: #d1d5db;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .skill-category h4 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .skill-items span {
+      background: #1f2937;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: #e5e7eb;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .contact-card i {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    .contact-info p { font-size: 0.75rem; color: var(--text-muted); }
+    .contact-info a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; word-break: break-all; }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Md. Al Amin</h1>
-      <p class="subtitle">Native Android Developer & Product Builder</p>
-      <p class="bio">Building scalable, architecture-driven mobile applications with modern Android tooling.</p>
-      <div class="btn-group">
-        <a href="https://github.com/your-username" class="btn" target="_blank">GitHub Profile</a>
-        <a href="mailto:your-email@example.com" class="btn btn-outline">Contact Me</a>
-      </div>
-    </header>
 
+  <!-- Top Banner -->
+  <div class="banner"></div>
+
+  <div class="container">
+    <!-- Profile Header -->
+    <div class="profile-section">
+      <div class="avatar-wrapper">
+        <!-- নিজের ছবি ব্যবহার করতে চাইলে নিচের src="profile.jpg" ব্যবহার করতে পারেন -->
+        <img src="profile.jpg" alt="Md. Al Amin" onerror="this.outerHTML='<div class=\'avatar-placeholder\'><i class=\'fa-solid fa-user-astronaut\'></i></div>'">
+      </div>
+      <h1>Md. Al Amin</h1>
+      <p class="headline">Software Developer & Academic Consultant</p>
+      <p class="location-tag"><i class="fa-solid fa-location-dot"></i> Sylhet, Bangladesh</p>
+      
+      <div class="cta-buttons">
+        <a href="mailto:alaminhusain425@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
+        <a href="https://wa.me/8801309218796" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://github.com/alamin474" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
     <section>
-      <h2>Featured Projects</h2>
+      <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Current Roles</h3>
       
       <div class="card">
-        <h3>Convoy — Educational Consultancy App</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-          Production-level native Android application designed to streamline student consultation workflows, featuring modern architecture and responsive UI.
-        </p>
-        <div style="margin-top: 0.5rem;">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Jetpack Compose</span>
-          <span class="tag">Play Store Live</span>
+        <div class="card-header">
+          <div>
+            <div class="card-title">Education Consultant & Software Developer</div>
+            <div class="card-subtitle">Convoy Education and Immigration</div>
+          </div>
+          <span class="badge badge-live">Active Role</span>
         </div>
-        <div class="links">
-          <a href="#" target="_blank">View on Google Play &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>VitalPulse — Health & Fitness Tracker</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-          Personal health metrics tracking application with offline persistence, reactive state management, and real-time activity logging.
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Leading native Android application development for streamlined client processing and student workflows while assisting prospective students with international education and immigration pathways.
         </p>
-        <div style="margin-top: 0.5rem;">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Room DB</span>
-          <span class="tag">Coroutines</span>
-          <span class="tag">In Development</span>
+        <div class="tag-container">
+          <span class="tag">Android Development</span>
+          <span class="tag">Education Consulting</span>
+          <span class="tag">Client Consultation</span>
         </div>
       </div>
     </section>
 
+    <!-- Key Honors & Achievements -->
     <section>
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>Kotlin</li>
-        <li>Jetpack Compose</li>
-        <li>Android SDK</li>
-        <li>Room / SQLite</li>
-        <li>MVVM Architecture</li>
-        <li>Git & GitHub CI/CD</li>
-        <li>REST APIs</li>
-        <li>Python</li>
-      </ul>
+      <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Grants & Honors</h3>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">International Astronomy & Astrophysics Competition (IAYC)</div>
+            <div class="card-subtitle">Full Grant Recipient</div>
+          </div>
+          <span class="badge badge-gold">Full Grant</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Awarded a 100% full grant for global youth camp participation based on analytical research and astrophysics problem solving.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">NASA International Space Apps Challenge</div>
+            <div class="card-subtitle">Researcher & Developer — AQUA-LENS Project</div>
+          </div>
+          <span class="badge badge-gold">Global Nominee</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Conducted satellite data interpretation and developed water quality analysis algorithms focusing on climate data and environmental security.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Bangladesh Mathematical Olympiad</div>
+            <div class="card-subtitle">Secondary Category Round Winner</div>
+          </div>
+          <span class="badge badge-gold">Olympiad Winner</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Demonstrated advanced mathematical analytical ability and rapid algorithm problem-solving skills.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Software Engineering Projects -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Convoy — Education Consultancy Mobile App</div>
+            <div class="card-subtitle">Production Android App (Play Store)</div>
+          </div>
+          <span class="badge badge-live">Live on Google Play</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Engineered and deployed a production application streamlining study-abroad inquiries, profile evaluations, and institutional matching.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Architecture Components</span>
+          <span class="tag">Room DB</span>
+        </div>
+        <a href="#" class="project-link" target="_blank"><i class="fa-brands fa-google-play"></i> Open Google Play Store</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">VitalPulse — Smart Health & Activity Engine</div>
+            <div class="card-subtitle">Native Android Application</div>
+          </div>
+          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border-color: rgba(56, 189, 248, 0.3);">In Active Dev</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          High-performance activity and fitness tracking system with local-first persistent architecture, SQLite optimizations, and real-time sensor metrics.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Coroutines / Flow</span>
+          <span class="tag">MVI Pattern</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4><i class="fa-solid fa-mobile-screen"></i> Mobile Engineering</h4>
+          <div class="skill-items">
+            <span>Kotlin</span>
+            <span>Jetpack Compose</span>
+            <span>Android SDK</span>
+            <span>Room DB</span>
+            <span>SQLite</span>
+            <span>MVVM / MVI</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fa-solid fa-terminal"></i> Tools & Automation</h4>
+          <div class="skill-items">
+            <span>Git / GitHub</span>
+            <span>GitHub Actions CI/CD</span>
+            <span>Linux (Debian)</span>
+            <span>Python</span>
+            <span>Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4><i class="fa-solid fa-globe"></i> Domain Knowledge</h4>
+          <div class="skill-items">
+            <span>International Education</span>
+            <span>Geographic Information</span>
+            <span>Remote Sensing</span>
+            <span>AI Modeling Workflows</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Verification -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div class="contact-info">
+            <p>Direct Email</p>
+            <a href="mailto:alaminhusain425@gmail.com">alaminhusain425@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+          <div class="contact-info">
+            <p>Direct Call</p>
+            <a href="tel:01346647598">01346647598</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
+          <div class="contact-info">
+            <p>WhatsApp</p>
+            <a href="https://wa.me/8801309218796" target="_blank">01309218796</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-      <p>&copy; 2026 Md. Al Amin. Hosted directly via GitHub Pages.</p>
+      <p>&copy; 2026 Md. Al Amin. Software Developer & Researcher.</p>
     </footer>
   </div>
+
 </body>
 </html>
