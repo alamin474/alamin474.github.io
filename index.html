@@ -7,89 +7,133 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg: #090d16;
-      --card-bg: #111827;
-      --card-border: #1f2937;
+      --bg-base: #070d18;
+      --card-bg: rgba(15, 23, 42, 0.78);
+      --card-border: rgba(56, 189, 248, 0.22);
+      --card-hover-border: rgba(56, 189, 248, 0.55);
       --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.15);
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --success: #34d399;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --accent-mint: #2dd4bf;
       --gold: #fbbf24;
+      --text-pure: #ffffff;
+      --text-main: #f1f5f9;
+      --text-muted: #cbd5e1;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background-color: var(--bg-base);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.45) 0px, transparent 55%),
+        radial-gradient(at 100% 25%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
+        radial-gradient(at 15% 75%, rgba(14, 165, 233, 0.25) 0px, transparent 50%),
+        radial-gradient(at 85% 95%, rgba(45, 212, 191, 0.18) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
       line-height: 1.6;
-      padding-bottom: 4rem;
+      padding-bottom: 5rem;
+      -webkit-font-smoothing: antialiased;
     }
+
+    /* Top Banner */
     .banner {
       width: 100%;
-      height: 260px;
+      height: 280px;
       background: url('IMG-20261031-WA0001.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.5);
     }
+    .banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: linear-gradient(to bottom, transparent, var(--bg-base));
+    }
+
     .container {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
       padding: 0 1.25rem;
     }
+
+    /* Profile Header */
     .profile-section {
       position: relative;
-      margin-top: -75px;
-      margin-bottom: 2.5rem;
+      margin-top: -85px;
+      margin-bottom: 2.8rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
+
     .avatar-wrapper {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: 155px;
+      height: 155px;
       border-radius: 50%;
-      border: 4px solid var(--bg);
-      background-color: #1e293b;
+      border: 4px solid #1e293b;
+      box-shadow: 0 0 30px var(--accent-glow);
+      background: #0f172a;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .avatar-placeholder {
-      display: flex;
+
+    .status-pill {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      height: 100%;
-      font-size: 3.5rem;
-      color: var(--accent);
-    }
-    h1 {
-      font-size: 2.2rem;
+      gap: 0.4rem;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #4ade80;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
       margin-top: 1rem;
-      color: #fff;
+    }
+    .status-pill::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-top: 0.5rem;
+      color: var(--text-pure);
       font-weight: 700;
+      letter-spacing: -0.5px;
     }
     .headline {
       color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-top: 0.25rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
     }
     .location-tag {
       color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
+      font-size: 0.92rem;
+      margin-top: 0.35rem;
     }
+
     .cta-buttons {
-      margin-top: 1.25rem;
+      margin-top: 1.35rem;
       display: flex;
-      gap: 0.75rem;
+      gap: 0.85rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -97,165 +141,264 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.6rem 1.25rem;
+      padding: 0.65rem 1.3rem;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.9rem;
       text-decoration: none;
-      transition: 0.2s ease;
+      transition: all 0.25s ease;
     }
-    .btn-primary { background: var(--accent); color: #04101e; }
-    .btn-primary:hover { background: #7dd3fc; }
-    .btn-whatsapp { background: #22c55e; color: #fff; }
-    .btn-whatsapp:hover { background: #16a34a; }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--card-border); }
-    .btn-outline:hover { background: #1f2937; }
+    .btn-primary { 
+      background: linear-gradient(135deg, #0284c7, #38bdf8); 
+      color: #04101e; 
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+    }
+    .btn-primary:hover { 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(56, 189, 248, 0.5);
+    }
+    .btn-whatsapp { 
+      background: linear-gradient(135deg, #16a34a, #22c55e); 
+      color: #ffffff; 
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    }
+    .btn-whatsapp:hover { 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+    }
+    .btn-outline { 
+      background: rgba(15, 23, 42, 0.6); 
+      color: var(--text-pure); 
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover { 
+      background: rgba(30, 41, 59, 0.85);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-    section { margin-bottom: 3rem; }
+    section { margin-bottom: 3.2rem; }
     .section-title {
-      font-size: 1.4rem;
-      color: #fff;
-      margin-bottom: 1.25rem;
+      font-size: 1.35rem;
+      color: var(--text-pure);
+      margin-bottom: 1.35rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 0.5rem;
+      gap: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 0.65rem;
     }
-    .section-title i { color: var(--accent); font-size: 1.2rem; }
+    .section-title i { color: var(--accent-mint); font-size: 1.25rem; }
 
+    /* Glassmorphism Card Style */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 1.35rem;
-      margin-bottom: 1rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 12px;
+      padding: 1.45rem;
+      margin-bottom: 1.2rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
     }
     .card:hover {
-      border-color: #374151;
-      transform: translateY(-2px);
+      border-color: var(--card-hover-border);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.18);
     }
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    .card-title { font-size: 1.15rem; color: #fff; font-weight: 600; }
-    .card-subtitle { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+    .card-title { font-size: 1.2rem; color: var(--text-pure); font-weight: 600; }
+    .card-subtitle { color: var(--accent); font-size: 0.94rem; font-weight: 500; }
+    
     .badge {
       font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.25rem 0.7rem;
       border-radius: 20px;
       font-weight: 600;
     }
-    .badge-live { background: rgba(52, 211, 153, 0.15); color: var(--success); border: 1px solid rgba(52, 211, 153, 0.3); }
-    .badge-gold { background: rgba(251, 191, 36, 0.15); color: var(--gold); border: 1px solid rgba(251, 191, 36, 0.3); }
-
-    .tag-container { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag {
-      background: #1f2937;
-      color: #d1d5db;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+    .badge-live { 
+      background: rgba(45, 212, 191, 0.15); 
+      color: var(--accent-mint); 
+      border: 1px solid rgba(45, 212, 191, 0.35); 
     }
-    .project-link {
+    .badge-gold { 
+      background: rgba(251, 191, 36, 0.15); 
+      color: var(--gold); 
+      border: 1px solid rgba(251, 191, 36, 0.35); 
+    }
+
+    .tag-container { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      background: rgba(30, 41, 59, 0.85);
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-weight: 500;
+    }
+
+    .card-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
       color: var(--accent);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      margin-top: 0.75rem;
+      margin-top: 0.95rem;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+    .card-btn:hover { gap: 0.7rem; color: #7dd3fc; }
+
+    /* Credentials & Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .cert-card:hover {
+      border-color: var(--card-hover-border);
+      transform: translateY(-2px);
+    }
+    .cert-issuer {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent-mint);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .cert-name {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-pure);
+      line-height: 1.4;
     }
 
+    /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.15rem;
     }
     .skill-category {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 1rem;
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+      padding: 1.25rem;
     }
     .skill-category h4 {
-      font-size: 0.95rem;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: var(--accent-mint);
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .skill-items span {
-      background: #1f2937;
-      font-size: 0.8rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      color: var(--text-pure);
+      font-weight: 500;
     }
 
+    /* Contacts Grid */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.15rem;
     }
     .contact-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 1rem;
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+      padding: 1.25rem;
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 1rem;
+      transition: all 0.25s ease;
+    }
+    .contact-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
     }
     .contact-card i {
-      font-size: 1.5rem;
+      font-size: 1.65rem;
       color: var(--accent);
     }
-    .contact-info p { font-size: 0.75rem; color: var(--text-muted); }
-    .contact-info a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; word-break: break-all; }
+    .contact-info p { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+    .contact-info a { 
+      color: var(--text-pure); 
+      text-decoration: none; 
+      font-size: 0.95rem; 
+      font-weight: 600; 
+      word-break: break-all; 
+    }
+    .contact-info a:hover { color: var(--accent); }
+
+    .action-dossier-box {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
 
     footer {
       text-align: center;
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 2rem;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Banner (IMG-20261031-WA0001.jpg) -->
+  <!-- Top Banner -->
   <div class="banner"></div>
 
   <div class="container">
     <!-- Profile Header -->
     <div class="profile-section">
       <div class="avatar-wrapper">
-        <!-- Profile Photo (DSC_7809.jpg) -->
-        <img src="DSC_7809.jpg" alt="Md. Al Amin" onerror="this.outerHTML='<div class=\'avatar-placeholder\'><i class=\'fa-solid fa-user\'></i></div>'">
+        <img src="DSC_7809.jpg" alt="Md. Al Amin">
       </div>
+      <div class="status-pill">Available for Remote Roles & High-Impact Projects</div>
       <h1>Md. Al Amin</h1>
-      <p class="headline">Software Developer & Academic Consultant</p>
+      <p class="headline">Native Android Developer & Academic Consultant</p>
       <p class="location-tag"><i class="fa-solid fa-location-dot"></i> Sylhet, Bangladesh</p>
       
       <div class="cta-buttons">
         <a href="mailto:alaminhusain425@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
         <a href="https://wa.me/8801309218796" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://github.com/alamin474" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://github.com/alamin474" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub Profile</a>
       </div>
     </div>
 
@@ -269,34 +412,38 @@
             <div class="card-title">Education Consultant & Software Developer</div>
             <div class="card-subtitle">Convoy Education and Immigration</div>
           </div>
-          <span class="badge badge-live">Active Role</span>
+          <span class="badge badge-live">Active Engagement</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Leading native Android application development for client processing and consultation workflows, while assisting prospective students with international higher education and immigration pathways.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Leading native Android application development for automated client processing and student workflows, while assisting prospective international students with global university pathways and immigration advisory.
         </p>
         <div class="tag-container">
-          <span class="tag">Android Development</span>
+          <span class="tag">Native Android</span>
           <span class="tag">Education Consulting</span>
           <span class="tag">Client Consultation</span>
+          <span class="tag">Workflow Automation</span>
         </div>
       </div>
     </section>
 
-    <!-- Key Honors & Achievements -->
+    <!-- Key Honors & Grants -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Grants & Honors</h3>
+      <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
 
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">International Astronomy & Astrophysics Competition (IAYC)</div>
-            <div class="card-subtitle">Full Grant Recipient</div>
+            <div class="card-title">International Astronomy Youth Camp (IAYC) — Spain</div>
+            <div class="card-subtitle">Full Grant Recipient (€1,190.00 EUR Coverage)</div>
           </div>
-          <span class="badge badge-gold">Full Grant</span>
+          <span class="badge badge-gold">Full Grant Winner</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Awarded a 100% full grant for global youth camp participation based on analytical problem solving and scientific research competence.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Awarded a 100% full grant and official sponsorship invitation from <strong>The International Workshop for Astronomy (IWA) e.V.</strong> (Germany) to attend IAYC in Spain, recognizing scientific research application and analytical excellence.
         </p>
+        <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" class="card-btn" target="_blank">
+          <i class="fa-solid fa-file-shield"></i> View Official Grant & Sponsorship Letter ↗
+        </a>
       </div>
 
       <div class="card">
@@ -307,26 +454,26 @@
           </div>
           <span class="badge badge-gold">Global Nominee</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Developed water security detection mechanisms utilizing satellite remote sensing datasets and algorithm-driven environmental data processing.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Formulated satellite-driven aquatic security algorithms with earth-observation datasets for automated environmental and water quality modeling.
         </p>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Bangladesh Mathematical Olympiad</div>
-            <div class="card-subtitle">Secondary Category Round Winner</div>
+            <div class="card-title">Bangladesh Mathematical Olympiad 2025</div>
+            <div class="card-subtitle">Secondary Category Round Winner (Dutch-Bangla Bank & Prothom Alo)</div>
           </div>
           <span class="badge badge-gold">Olympiad Winner</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Recognized for advanced quantitative logic, algorithmic reasoning, and competitive mathematical problem-solving.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Demonstrated competitive mathematical deduction, quantitative logic, and high-pressure problem-solving competence.
         </p>
       </div>
     </section>
 
-    <!-- Featured Software Engineering Projects -->
+    <!-- Production Projects -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-code"></i> Featured Production Projects</h3>
 
@@ -334,32 +481,32 @@
         <div class="card-header">
           <div>
             <div class="card-title">Convoy — Education Consultancy Mobile App</div>
-            <div class="card-subtitle">Production Android App (Play Store)</div>
+            <div class="card-subtitle">Production Native Android App</div>
           </div>
           <span class="badge badge-live">Live on Google Play</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Engineered and launched an end-to-end client management and inquiry workflow application on Google Play Store with modern Android architecture.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Full-featured production application streamlining overseas educational consultation, student profile evaluation, and institutional matching.
         </p>
         <div class="tag-container">
           <span class="tag">Kotlin</span>
           <span class="tag">Jetpack Compose</span>
-          <span class="tag">Architecture Components</span>
           <span class="tag">Room DB</span>
+          <span class="tag">Clean Architecture</span>
         </div>
-        <a href="#" class="project-link" target="_blank"><i class="fa-brands fa-google-play"></i> Open Google Play Store</a>
+        <a href="#" class="card-btn" target="_blank"><i class="fa-brands fa-google-play"></i> Open Google Play Store Listing &rarr;</a>
       </div>
 
       <div class="card">
         <div class="card-header">
           <div>
             <div class="card-title">VitalPulse — Smart Health & Activity Engine</div>
-            <div class="card-subtitle">Native Android Application</div>
+            <div class="card-subtitle">Native Android Architecture Project</div>
           </div>
-          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border-color: rgba(56, 189, 248, 0.3);">In Active Dev</span>
+          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border-color: rgba(56, 189, 248, 0.35);">In Active Dev</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          Personal health and daily metric monitoring application powered by offline-first Room/SQLite storage, Coroutines, and responsive UI.
+        <p style="color: var(--text-muted); font-size: 0.94rem;">
+          Modern fitness tracking system engineered with an offline-first persistent architecture, SQLite optimizations, Coroutine flows, and metric calculations.
         </p>
         <div class="tag-container">
           <span class="tag">Kotlin</span>
@@ -370,7 +517,50 @@
       </div>
     </section>
 
-    <!-- Technical Skills Matrix -->
+    <!-- Verified Certifications Grid -->
+    <section>
+      <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Verified Certifications</h3>
+      
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-issuer">IBM Developer Skills Network</div>
+          <div class="cert-name">Python 101 for Data Science</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer">United Nations University (UNU-IAS)</div>
+          <div class="cert-name">Net Zero 101: What, Why and How</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer">UNITAR & UN CC:Learn</div>
+          <div class="cert-name">Climate Change: From Learning to Action</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer">UNITAR & UN Women (EmPower)</div>
+          <div class="cert-name">Gender Equality in Climate Action & Renewable Energy</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer">UNITAR</div>
+          <div class="cert-name">Introduction to Sustainable Development in Practice</div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer">Sylhet Govt. College Debating Club</div>
+          <div class="cert-name">Outstanding Performance & Active Debate Membership</div>
+        </div>
+      </div>
+
+      <div class="action-dossier-box">
+        <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" class="btn btn-outline" target="_blank" style="padding: 0.8rem 1.6rem; font-size: 0.95rem;">
+          <i class="fa-solid fa-folder-open" style="color: var(--accent);"></i> View Full ECA & Credentials Dossier (Google Drive) ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Technical Competencies -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
       <div class="skills-grid">
@@ -389,7 +579,7 @@
         <div class="skill-category">
           <h4><i class="fa-solid fa-terminal"></i> Tools & Automation</h4>
           <div class="skill-items">
-            <span>Git / GitHub</span>
+            <span>Git & GitHub</span>
             <span>GitHub Actions CI/CD</span>
             <span>Linux (Debian)</span>
             <span>Python</span>
@@ -401,15 +591,15 @@
           <h4><i class="fa-solid fa-globe"></i> Domain Knowledge</h4>
           <div class="skill-items">
             <span>International Education</span>
-            <span>Geographic Information</span>
             <span>Remote Sensing</span>
-            <span>AI Content Production</span>
+            <span>Geographic Systems</span>
+            <span>AI Modeling Workflows</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact & Verification -->
+    <!-- Contact Details -->
     <section>
       <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
       <div class="contact-grid">
@@ -425,22 +615,22 @@
           <i class="fa-solid fa-phone"></i>
           <div class="contact-info">
             <p>Direct Call</p>
-            <a href="tel:01346647598">01346647598</a>
+            <a href="tel:+8801346647598">+880 1346-647598</a>
           </div>
         </div>
 
         <div class="contact-card">
           <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
           <div class="contact-info">
-            <p>WhatsApp</p>
-            <a href="https://wa.me/8801309218796" target="_blank">01309218796</a>
+            <p>WhatsApp (Chat Direct)</p>
+            <a href="https://wa.me/8801309218796" target="_blank">+880 1309-218796</a>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2026 Md. Al Amin. Software Developer & Researcher.</p>
+      <p>&copy; 2026 Md. Al Amin. Native Android Developer & Researcher.</p>
     </footer>
   </div>
 
