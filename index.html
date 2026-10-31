@@ -7,17 +7,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg-base: #070d18;
-      --card-bg: rgba(15, 23, 42, 0.78);
-      --card-border: rgba(56, 189, 248, 0.22);
-      --card-hover-border: rgba(56, 189, 248, 0.55);
-      --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.25);
-      --accent-mint: #2dd4bf;
-      --gold: #fbbf24;
-      --text-pure: #ffffff;
-      --text-main: #f1f5f9;
-      --text-muted: #cbd5e1;
+      --bg-base: #060913;
+      --card-bg: rgba(13, 21, 38, 0.85);
+      --card-border: rgba(56, 189, 248, 0.25);
+      
+      /* Vibrant Psychological Accents */
+      --cyan: #00f2fe;
+      --blue: #4facfe;
+      --emerald: #10b981;
+      --green-glow: #05df72;
+      --coral-red: #ff4b72;
+      --amber: #f59e0b;
+      --purple: #8b5cf6;
+
+      --text-white: #ffffff;
+      --text-bright: #f8fafc;
+      --text-sub: #cbd5e1;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,26 +30,28 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
       background-color: var(--bg-base);
+      /* Psychological Vibrant Multi-Color Glow Mesh */
       background-image: 
-        radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.45) 0px, transparent 55%),
-        radial-gradient(at 100% 25%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
-        radial-gradient(at 15% 75%, rgba(14, 165, 233, 0.25) 0px, transparent 50%),
-        radial-gradient(at 85% 95%, rgba(45, 212, 191, 0.18) 0px, transparent 50%);
+        radial-gradient(circle at 10% 15%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(255, 75, 114, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 55%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(79, 172, 254, 0.15) 0%, transparent 45%);
       background-attachment: fixed;
-      color: var(--text-main);
+      color: var(--text-bright);
       line-height: 1.6;
       padding-bottom: 5rem;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Banner */
+    /* Vibrant Banner */
     .banner {
       width: 100%;
-      height: 280px;
+      height: 290px;
       background: url('IMG-20261031-WA0001.jpg') no-repeat center center;
       background-size: cover;
       position: relative;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
     .banner::after {
       content: '';
@@ -52,7 +59,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 90px;
+      height: 100px;
       background: linear-gradient(to bottom, transparent, var(--bg-base));
     }
 
@@ -65,8 +72,8 @@
     /* Profile Header */
     .profile-section {
       position: relative;
-      margin-top: -85px;
-      margin-bottom: 2.8rem;
+      margin-top: -90px;
+      margin-bottom: 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -75,307 +82,338 @@
 
     .avatar-wrapper {
       position: relative;
-      width: 155px;
-      height: 155px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 4px solid #1e293b;
-      box-shadow: 0 0 30px var(--accent-glow);
-      background: #0f172a;
-      overflow: hidden;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--cyan), var(--coral-red), var(--emerald));
+      box-shadow: 0 0 35px rgba(0, 242, 254, 0.35);
     }
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
+      border-radius: 50%;
       object-fit: cover;
+      border: 3px solid var(--bg-base);
     }
 
     .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.35);
-      color: #4ade80;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.25rem 0.75rem;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      color: var(--green-glow);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.3rem 0.9rem;
       border-radius: 20px;
-      margin-top: 1rem;
+      margin-top: 1.1rem;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
     }
     .status-pill::before {
       content: '';
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
+      background: var(--green-glow);
+      box-shadow: 0 0 10px var(--green-glow);
     }
 
     h1 {
-      font-size: 2.3rem;
-      margin-top: 0.5rem;
-      color: var(--text-pure);
-      font-weight: 700;
+      font-size: 2.4rem;
+      margin-top: 0.6rem;
+      color: var(--text-white);
+      font-weight: 800;
       letter-spacing: -0.5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     .headline {
-      color: var(--accent);
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 0.2rem;
+      background: linear-gradient(90deg, var(--cyan), #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
     }
     .location-tag {
-      color: var(--text-muted);
-      font-size: 0.92rem;
+      color: var(--text-sub);
+      font-size: 0.95rem;
       margin-top: 0.35rem;
+      font-weight: 500;
     }
 
     .cta-buttons {
-      margin-top: 1.35rem;
+      margin-top: 1.5rem;
       display: flex;
-      gap: 0.85rem;
+      gap: 0.9rem;
       flex-wrap: wrap;
       justify-content: center;
     }
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.3rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
+      gap: 0.55rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 0.92rem;
       text-decoration: none;
       transition: all 0.25s ease;
     }
     .btn-primary { 
-      background: linear-gradient(135deg, #0284c7, #38bdf8); 
-      color: #04101e; 
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+      background: linear-gradient(135deg, #0284c7, var(--cyan)); 
+      color: #03101e; 
+      box-shadow: 0 4px 18px rgba(0, 242, 254, 0.35);
     }
     .btn-primary:hover { 
       transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 6px 24px rgba(0, 242, 254, 0.55);
     }
     .btn-whatsapp { 
-      background: linear-gradient(135deg, #16a34a, #22c55e); 
+      background: linear-gradient(135deg, #059669, var(--emerald)); 
       color: #ffffff; 
-      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
     }
     .btn-whatsapp:hover { 
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(34, 197, 94, 0.45);
+      box-shadow: 0 6px 22px rgba(16, 185, 129, 0.55);
     }
     .btn-outline { 
-      background: rgba(15, 23, 42, 0.6); 
-      color: var(--text-pure); 
+      background: rgba(15, 23, 42, 0.7); 
+      color: var(--text-white); 
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
     .btn-outline:hover { 
-      background: rgba(30, 41, 59, 0.85);
-      border-color: var(--accent);
+      background: rgba(30, 41, 59, 0.9);
+      border-color: var(--cyan);
       transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.25);
     }
 
-    section { margin-bottom: 3.2rem; }
+    section { margin-bottom: 3.5rem; }
     .section-title {
-      font-size: 1.35rem;
-      color: var(--text-pure);
-      margin-bottom: 1.35rem;
+      font-size: 1.4rem;
+      color: var(--text-white);
+      margin-bottom: 1.4rem;
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding-bottom: 0.65rem;
+      gap: 0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      padding-bottom: 0.7rem;
     }
-    .section-title i { color: var(--accent-mint); font-size: 1.25rem; }
+    .section-title i { 
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.35rem; 
+    }
 
-    /* Glassmorphism Card Style */
+    /* Crisp High-Contrast Glass Card */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 12px;
-      padding: 1.45rem;
-      margin-bottom: 1.2rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 1.55rem;
+      margin-bottom: 1.25rem;
       transition: all 0.25s ease;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
     }
     .card:hover {
-      border-color: var(--card-hover-border);
+      border-color: rgba(0, 242, 254, 0.5);
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.18);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.18);
     }
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.75rem;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    .card-title { font-size: 1.2rem; color: var(--text-pure); font-weight: 600; }
-    .card-subtitle { color: var(--accent); font-size: 0.94rem; font-weight: 500; }
+    .card-title { font-size: 1.25rem; color: var(--text-white); font-weight: 700; }
+    .card-subtitle { color: var(--cyan); font-size: 0.98rem; font-weight: 600; margin-top: 0.2rem; }
     
     .badge {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
     .badge-live { 
-      background: rgba(45, 212, 191, 0.15); 
-      color: var(--accent-mint); 
-      border: 1px solid rgba(45, 212, 191, 0.35); 
+      background: rgba(16, 185, 129, 0.2); 
+      color: #34d399; 
+      border: 1px solid rgba(16, 185, 129, 0.45); 
     }
     .badge-gold { 
-      background: rgba(251, 191, 36, 0.15); 
-      color: var(--gold); 
-      border: 1px solid rgba(251, 191, 36, 0.35); 
+      background: rgba(245, 158, 11, 0.2); 
+      color: #fbbf24; 
+      border: 1px solid rgba(245, 158, 11, 0.45); 
+    }
+    .badge-red {
+      background: rgba(255, 75, 114, 0.2);
+      color: #ff6b8b;
+      border: 1px solid rgba(255, 75, 114, 0.45);
     }
 
-    .tag-container { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .card p {
+      color: var(--text-sub) !important;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .tag-container { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
-      background: rgba(30, 41, 59, 0.85);
+      background: rgba(24, 34, 58, 0.95);
       color: #e2e8f0;
-      font-size: 0.8rem;
-      padding: 0.25rem 0.65rem;
+      font-size: 0.82rem;
+      padding: 0.3rem 0.75rem;
       border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-weight: 500;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      font-weight: 600;
     }
 
     .card-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      color: var(--accent);
+      gap: 0.5rem;
+      color: var(--cyan);
       text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      margin-top: 0.95rem;
-      transition: gap 0.2s ease, color 0.2s ease;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      transition: all 0.2s ease;
     }
-    .card-btn:hover { gap: 0.7rem; color: #7dd3fc; }
+    .card-btn:hover { 
+      gap: 0.75rem; 
+      color: #ffffff;
+      text-shadow: 0 0 10px var(--cyan);
+    }
 
-    /* Credentials & Certifications Grid */
+    /* Certifications Grid */
     .cert-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 1.2rem;
       margin-bottom: 1.5rem;
     }
     .cert-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(12px);
-      border-radius: 10px;
-      padding: 1.15rem;
+      backdrop-filter: blur(14px);
+      border-radius: 12px;
+      padding: 1.3rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.25s ease;
     }
     .cert-card:hover {
-      border-color: var(--card-hover-border);
+      border-color: rgba(255, 75, 114, 0.45);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 75, 114, 0.15);
     }
     .cert-issuer {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--accent-mint);
-      font-weight: 700;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.6px;
+      color: var(--cyan);
+      font-weight: 800;
+      margin-bottom: 0.4rem;
     }
     .cert-name {
-      font-size: 0.96rem;
-      font-weight: 600;
-      color: var(--text-pure);
-      line-height: 1.4;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.45;
     }
 
     /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.15rem;
+      gap: 1.2rem;
     }
     .skill-category {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(12px);
-      border-radius: 10px;
-      padding: 1.25rem;
+      backdrop-filter: blur(14px);
+      border-radius: 12px;
+      padding: 1.35rem;
     }
     .skill-category h4 {
-      font-size: 1rem;
-      color: var(--accent-mint);
-      margin-bottom: 0.85rem;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 0.95rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
+      font-weight: 700;
     }
-    .skill-items { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .skill-items span {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.82rem;
-      padding: 0.35rem 0.7rem;
+      background: rgba(10, 17, 33, 0.95);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      font-size: 0.85rem;
+      padding: 0.35rem 0.75rem;
       border-radius: 6px;
-      color: var(--text-pure);
-      font-weight: 500;
+      color: var(--text-white);
+      font-weight: 600;
     }
 
     /* Contacts Grid */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 1.2rem;
     }
     .contact-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      backdrop-filter: blur(12px);
-      border-radius: 10px;
-      padding: 1.25rem;
+      backdrop-filter: blur(14px);
+      border-radius: 12px;
+      padding: 1.35rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.1rem;
       transition: all 0.25s ease;
     }
     .contact-card:hover {
-      border-color: var(--accent);
+      border-color: var(--cyan);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
+      box-shadow: 0 6px 22px rgba(0, 242, 254, 0.25);
     }
     .contact-card i {
-      font-size: 1.65rem;
-      color: var(--accent);
+      font-size: 1.8rem;
+      color: var(--cyan);
     }
-    .contact-info p { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+    .contact-info p { font-size: 0.82rem; color: var(--text-sub); font-weight: 600; }
     .contact-info a { 
-      color: var(--text-pure); 
+      color: var(--text-white); 
       text-decoration: none; 
-      font-size: 0.95rem; 
-      font-weight: 600; 
+      font-size: 1rem; 
+      font-weight: 700; 
       word-break: break-all; 
     }
-    .contact-info a:hover { color: var(--accent); }
+    .contact-info a:hover { color: var(--cyan); }
 
     .action-dossier-box {
       text-align: center;
-      margin-top: 1.5rem;
+      margin-top: 1.6rem;
     }
 
     footer {
       text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
-      color: var(--text-muted);
-      font-size: 0.88rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 2.2rem;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      font-weight: 500;
     }
   </style>
 </head>
@@ -393,7 +431,7 @@
       <div class="status-pill">Available for Remote Roles & High-Impact Projects</div>
       <h1>Md. Al Amin</h1>
       <p class="headline">Native Android Developer & Academic Consultant</p>
-      <p class="location-tag"><i class="fa-solid fa-location-dot"></i> Sylhet, Bangladesh</p>
+      <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: var(--coral-red);"></i> Sylhet, Bangladesh</p>
       
       <div class="cta-buttons">
         <a href="mailto:alaminhusain425@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Send Email</a>
@@ -414,7 +452,7 @@
           </div>
           <span class="badge badge-live">Active Engagement</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Leading native Android application development for automated client processing and student workflows, while assisting prospective international students with global university pathways and immigration advisory.
         </p>
         <div class="tag-container">
@@ -430,7 +468,7 @@
     <section>
       <h3 class="section-title"><i class="fa-solid fa-award"></i> Major Honors & Global Grants</h3>
 
-      <div class="card">
+      <div class="card" style="border-left: 4px solid var(--amber);">
         <div class="card-header">
           <div>
             <div class="card-title">International Astronomy Youth Camp (IAYC) — Spain</div>
@@ -438,15 +476,15 @@
           </div>
           <span class="badge badge-gold">Full Grant Winner</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Awarded a 100% full grant and official sponsorship invitation from <strong>The International Workshop for Astronomy (IWA) e.V.</strong> (Germany) to attend IAYC in Spain, recognizing scientific research application and analytical excellence.
         </p>
         <a href="https://drive.google.com/file/d/1EhjvzGSBBapOCx1LtAmTuzr8SxR-fOYf/view?usp=drivesdk" class="card-btn" target="_blank">
-          <i class="fa-solid fa-file-shield"></i> View Official Grant & Sponsorship Letter ↗
+          <i class="fa-solid fa-file-circle-check"></i> View Official Grant & Sponsorship Letter ↗
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" style="border-left: 4px solid var(--cyan);">
         <div class="card-header">
           <div>
             <div class="card-title">NASA International Space Apps Challenge</div>
@@ -454,20 +492,20 @@
           </div>
           <span class="badge badge-gold">Global Nominee</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Formulated satellite-driven aquatic security algorithms with earth-observation datasets for automated environmental and water quality modeling.
         </p>
       </div>
 
-      <div class="card">
+      <div class="card" style="border-left: 4px solid var(--coral-red);">
         <div class="card-header">
           <div>
             <div class="card-title">Bangladesh Mathematical Olympiad 2025</div>
             <div class="card-subtitle">Secondary Category Round Winner (Dutch-Bangla Bank & Prothom Alo)</div>
           </div>
-          <span class="badge badge-gold">Olympiad Winner</span>
+          <span class="badge badge-red">Olympiad Winner</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Demonstrated competitive mathematical deduction, quantitative logic, and high-pressure problem-solving competence.
         </p>
       </div>
@@ -485,7 +523,7 @@
           </div>
           <span class="badge badge-live">Live on Google Play</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Full-featured production application streamlining overseas educational consultation, student profile evaluation, and institutional matching.
         </p>
         <div class="tag-container">
@@ -494,7 +532,7 @@
           <span class="tag">Room DB</span>
           <span class="tag">Clean Architecture</span>
         </div>
-        <a href="#" class="card-btn" target="_blank"><i class="fa-brands fa-google-play"></i> Open Google Play Store Listing &rarr;</a>
+        <a href="#" class="card-btn" target="_blank"><i class="fa-brands fa-google-play" style="color: var(--emerald);"></i> Open Google Play Store Listing &rarr;</a>
       </div>
 
       <div class="card">
@@ -503,9 +541,9 @@
             <div class="card-title">VitalPulse — Smart Health & Activity Engine</div>
             <div class="card-subtitle">Native Android Architecture Project</div>
           </div>
-          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.15); color: var(--accent); border-color: rgba(56, 189, 248, 0.35);">In Active Dev</span>
+          <span class="badge badge-live" style="background: rgba(56, 189, 248, 0.2); color: var(--cyan); border-color: rgba(56, 189, 248, 0.45);">In Active Dev</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.94rem;">
+        <p>
           Modern fitness tracking system engineered with an offline-first persistent architecture, SQLite optimizations, Coroutine flows, and metric calculations.
         </p>
         <div class="tag-container">
@@ -554,8 +592,8 @@
       </div>
 
       <div class="action-dossier-box">
-        <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" class="btn btn-outline" target="_blank" style="padding: 0.8rem 1.6rem; font-size: 0.95rem;">
-          <i class="fa-solid fa-folder-open" style="color: var(--accent);"></i> View Full ECA & Credentials Dossier (Google Drive) ↗
+        <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" class="btn btn-outline" target="_blank" style="padding: 0.85rem 1.8rem; font-size: 0.98rem;">
+          <i class="fa-solid fa-folder-open" style="color: var(--cyan);"></i> View Full ECA & Credentials Dossier (Google Drive) ↗
         </a>
       </div>
     </section>
@@ -604,7 +642,7 @@
       <h3 class="section-title"><i class="fa-solid fa-address-card"></i> Contact Information</h3>
       <div class="contact-grid">
         <div class="contact-card">
-          <i class="fa-solid fa-envelope"></i>
+          <i class="fa-solid fa-envelope" style="color: var(--cyan);"></i>
           <div class="contact-info">
             <p>Direct Email</p>
             <a href="mailto:alaminhusain425@gmail.com">alaminhusain425@gmail.com</a>
@@ -612,7 +650,7 @@
         </div>
 
         <div class="contact-card">
-          <i class="fa-solid fa-phone"></i>
+          <i class="fa-solid fa-phone" style="color: var(--coral-red);"></i>
           <div class="contact-info">
             <p>Direct Call</p>
             <a href="tel:+8801346647598">+880 1346-647598</a>
@@ -620,7 +658,7 @@
         </div>
 
         <div class="contact-card">
-          <i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i>
+          <i class="fa-brands fa-whatsapp" style="color: var(--green-glow);"></i>
           <div class="contact-info">
             <p>WhatsApp (Chat Direct)</p>
             <a href="https://wa.me/8801309218796" target="_blank">+880 1309-218796</a>
