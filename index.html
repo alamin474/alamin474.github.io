@@ -17,10 +17,10 @@
   <title>MD AL AMIN | Android App Developer & Climate Researcher</title>
   <meta name="title" content="MD AL AMIN | Android App Developer & Climate Researcher">
   <meta name="author" content="MD AL AMIN">
-  <meta name="description" content="Official portfolio and biography of MD AL AMIN: Android Application Developer, UN Climate Action Researcher, and student at Sylhet Government College. IWA e.V. Germany scholarship recipient.">
+  <meta name="description" content="Official portfolio and biography of MD AL AMIN: Android Application Developer, UN Climate Action Researcher, Clean Sylhet Volunteer, and student at Sylhet Government College. IWA e.V. Germany scholarship recipient.">
 
   <!-- Comprehensive SEO Keywords -->
-  <meta name="keywords" content="MD AL AMIN, Md Al Amin, Al Amin, আল আমীন, এমডি আল আমীন, Al Amin Sylhet, MD AL AMIN Sylhet, alamin.is-a.dev, alamin474, Android Developer Bangladesh, Sylhet Government College, IAYC Germany, IWA eV Scholarship, AQUA-LENS, Stickology, Climate Researcher Sylhet">
+  <meta name="keywords" content="MD AL AMIN, Md Al Amin, Al Amin, আল আমীন, এমডি আল আমীন, Al Amin Sylhet, MD AL AMIN Sylhet, alamin.is-a.dev, alamin474, Android Developer Bangladesh, Sylhet Government College, IAYC Germany, IWA eV Scholarship, AQUA-LENS, Stickology, Clean Sylhet, Climate Researcher Sylhet">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="profile">
@@ -51,7 +51,8 @@
       "Kotlin",
       "Jetpack Compose",
       "Climate Change Policy",
-      "Earth Observation"
+      "Earth Observation",
+      "Community Volunteering"
     ]
   }
   </script>
@@ -66,6 +67,7 @@
       --coral-red: #ff4b72;
       --gold: #fbbf24;
       --telegram: #229ED9;
+      --messenger: #0084FF;
       --text-pure: #ffffff;
       --text-sub: #cbd5e1;
     }
@@ -215,6 +217,14 @@
       color: #ffffff; 
       box-shadow: 0 4px 18px rgba(34, 158, 217, 0.4);
     }
+    .btn-messenger {
+      background: linear-gradient(135deg, #006aff, #a033ff);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 132, 255, 0.4);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
     section { margin-bottom: 3.5rem; }
     .section-title {
@@ -248,6 +258,41 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    /* Clean Sylhet Photo Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      background: rgba(10, 16, 30, 0.9);
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+    .gallery-caption {
+      padding: 0.65rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #34d399;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .showcase-action-bar {
@@ -376,6 +421,15 @@
       line-height: 1.6;
       margin-bottom: 1.1rem;
     }
+    .exp-list {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      padding-left: 1.2rem;
+    }
+    .exp-list li {
+      margin-bottom: 0.4rem;
+    }
     .tag-container {
       display: flex;
       flex-wrap: wrap;
@@ -404,6 +458,15 @@
       background: rgba(2, 132, 199, 0.2);
       color: #38bdf8;
       border: 1px solid rgba(56, 189, 248, 0.45);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .badge-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.45);
       font-size: 0.75rem;
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
@@ -518,29 +581,97 @@
       </div>
     </div>
 
-    <!-- 1. Experience Section -->
+    <!-- 1. Community Volunteering & Experience Section (Clean Sylhet First) -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Current Roles</h3>
-      
+      <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Community Volunteering & Experience</h3>
+
+      <!-- Role 1 (Top): Clean Sylhet Community Volunteering (With 3 Photos & Join Us Messenger Link) -->
+      <div class="text-card" style="border-left: 4px solid var(--emerald);">
+        <div class="text-card-header">
+          <div>
+            <h4 class="text-card-title">Community Cleaning Volunteer</h4>
+            <div class="text-card-sub" style="color: #34d399; margin-bottom: 0;">Clean Sylhet • Sylhet, Bangladesh</div>
+          </div>
+          <span class="badge-green"><i class="fa-solid fa-leaf"></i> Nov 2026 – Present</span>
+        </div>
+
+        <p class="text-card-desc">
+          Actively contributing to civic cleanliness, environmental awareness, and urban hygiene initiatives across Sylhet city alongside dedicated youth volunteers.
+        </p>
+
+        <ul class="exp-list" style="margin-bottom: 1.2rem;">
+          <li>Participating in large-scale community cleaning and environmental maintenance drives.</li>
+          <li>Collecting litter and maintaining cleanliness across streets, riverbanks, and public spaces.</li>
+          <li>Working cooperatively with volunteer teams while adhering to hygiene and safety practices.</li>
+        </ul>
+
+        <!-- 3 Uploaded Clean Sylhet Photos Grid -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="clean_sylhet_community.jpg" alt="Clean Sylhet Community Pledge">
+            <div class="gallery-caption"><i class="fa-solid fa-users"></i> Clean Sylhet Community</div>
+          </div>
+          <div class="gallery-item">
+            <img src="clean_sylhet_working_activity.jpg" alt="Clean Sylhet Field Working Activity">
+            <div class="gallery-caption"><i class="fa-solid fa-broom"></i> Field Working Activity</div>
+          </div>
+          <div class="gallery-item">
+            <img src="volunteer_tshirt.jpg" alt="Clean Sylhet Official Volunteer T-Shirt">
+            <div class="gallery-caption"><i class="fa-solid fa-shirt"></i> Official Volunteer Apparel</div>
+          </div>
+        </div>
+
+        <!-- Clean Sylhet Messenger Group Join Us Banner -->
+        <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(0, 132, 255, 0.18)); border: 1px solid rgba(52, 211, 153, 0.45); border-radius: 12px; padding: 1rem 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+          <div>
+            <div style="font-weight: 700; color: #ffffff; font-size: 0.95rem;">
+              <i class="fa-brands fa-facebook-messenger" style="color: #38bdf8;"></i> পরিচ্ছন্ন ও সুন্দর সিলেট গড়তে আমাদের সাথে যুক্ত হোন!
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-sub); margin-top: 3px;">
+              ক্লিন সিলেট (Clean Sylhet) ভলান্টিয়ারদের অফিশিয়াল মেসেঞ্জার গ্রুপে জয়েন করুন।
+            </div>
+          </div>
+          <a href="https://m.me/j/rriERR-qC2FlD1i-/?send_source=gc%3Acopy_invite_link_c" target="_blank" rel="noopener noreferrer" class="btn btn-messenger" style="padding: 0.6rem 1.35rem; font-size: 0.9rem;">
+            <i class="fa-brands fa-facebook-messenger"></i> Join Us ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Showcase Card -->
       <div class="showcase-card">
         <img src="card_experience.jpg" onerror="this.src='Gemini_Generated_Image_xm13npxm13npxm13.jpeg'" class="showcase-img" alt="Convoy Consultant & Developer">
       </div>
 
-      <!-- Experience Detail Card: Convoy Education and Immigration -->
+      <!-- Role 2: Convoy Travel & Student Services Consultant -->
       <div class="text-card" style="border-left: 4px solid #2563eb;">
         <div class="text-card-header">
           <div>
-            <h4 class="text-card-title">Student Consultant</h4>
-            <div class="text-card-sub" style="margin-bottom: 0;">Convoy Education and Immigration</div>
+            <h4 class="text-card-title">Travel & Student Services Consultant</h4>
+            <div class="text-card-sub" style="margin-bottom: 0;">Convoy - Study Abroad • Sylhet, Bangladesh</div>
           </div>
           <span class="badge-blue"><i class="fa-solid fa-calendar-check"></i> Sep 2025 – Present</span>
         </div>
-        <p class="text-card-desc">
-          শিক্ষার্থীদের উচ্চশিক্ষা ও ক্যারিয়ার সংক্রান্ত লক্ষ্য অনুযায়ী আন্তর্জাতিক বিশ্ববিদ্যালয় নির্বাচন, ভর্তি প্রক্রিয়া এবং ভিসা গাইডলাইনে বিশেষজ্ঞ পরামর্শ ও সহায়তা প্রদান।
-        </p>
-        <ul style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.6; padding-left: 20px;">
-          <li>উচ্চশিক্ষার আবেদন ও প্রয়োজনীয় ডকুমেন্টস মূল্যায়নে শিক্ষার্থীদের দিকনির্দেশনা প্রদান।</li>
-          <li>আন্তর্জাতিক বিশ্ববিদ্যালয়গুলোর অ্যাডমিশন রিকোয়ারমেন্টস ও স্কলারশিপ সুযোগ নিয়ে কাউন্সেলিং।</li>
+        <ul class="exp-list" style="margin-top: 0.8rem;">
+          <li>Provide comprehensive student guidance and international study abroad consultation.</li>
+          <li>Assist students with university selection, scholarships, and admission procedures.</li>
+          <li>Support air ticketing, travel arrangements, and visa documentation guidance.</li>
+          <li>Conduct online research and guide clients in preparing and organizing application documents.</li>
+        </ul>
+      </div>
+
+      <!-- Role 3: Convoy Mobile Application Developer -->
+      <div class="text-card" style="border-left: 4px solid var(--cyan);">
+        <div class="text-card-header">
+          <div>
+            <h4 class="text-card-title">Mobile Application Developer</h4>
+            <div class="text-card-sub" style="margin-bottom: 0;">Convoy - Independent App Development Project</div>
+          </div>
+          <span class="badge-blue"><i class="fa-solid fa-code"></i> Apr 2026 – Present</span>
+        </div>
+        <ul class="exp-list" style="margin-top: 0.8rem;">
+          <li>Planned, architected, and developed the <strong>Convoy - Study Abroad</strong> Android application using Kotlin and Jetpack Compose.</li>
+          <li>Managed end-to-end app lifecycle from UI/UX design to Google Play Console closed testing and release preparation.</li>
+          <li>Organized digital resources for global education and maintained version control via GitHub.</li>
         </ul>
       </div>
     </section>
@@ -602,7 +733,7 @@
           <span class="tag">Age: 18–40 Years</span>
         </div>
 
-        <ul style="color: var(--text-sub); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.2rem; padding-left: 20px;">
+        <ul class="exp-list" style="margin-bottom: 1.2rem;">
           <li><strong>Fully Funded:</strong> রাউন্ড-ট্রিপ এয়ারফেয়ার রিইমবার্সমেন্ট, থাকা-খাওয়া, এয়ারপোর্ট ট্রান্সফার ও সার্টিফিকেট।</li>
           <li><strong>Partially Funded:</strong> ৫০% প্রোগ্রাম ফি ছাড়, থাকা-খাওয়া, এয়ারপোর্ট ট্রান্সফার ও সার্টিফিকেট।</li>
         </ul>
@@ -672,15 +803,15 @@
       <div class="showcase-card">
         <img src="IMG-20261031-WA0007.jpg" class="showcase-img" alt="Credentials Dossier">
         <div class="showcase-action-bar">
-          <span style="color: var(--text-sub); font-size: 0.92rem;"><i class="fa-solid fa-shield-halved"></i> IBM, UNU-IAS, UNITAR, SGCDC</span>
+          <span style="color: var(--text-sub); font-size: 0.92rem;"><i class="fa-solid fa-shield-halved"></i> IBM, UNU-IAS, UNITAR, SGCDC, MATS First Aid</span>
           <a href="https://drive.google.com/file/d/11XPn3iQG5bGNXFb4D7iF8we86G20cvOl/view?usp=drivesdk" target="_blank" class="action-btn"><i class="fa-solid fa-folder-open"></i> Open Complete Google Drive Dossier ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- 6. Technical Competencies -->
+    <!-- 6. Technical & Professional Competencies (Updated with CV Skills) -->
     <section>
-      <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Competencies</h3>
+      <h3 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical & Professional Skills</h3>
       
       <div class="skills-grid">
         <div class="skill-box">
@@ -693,21 +824,21 @@
           </ul>
         </div>
         <div class="skill-box">
-          <h4><i class="fa-solid fa-terminal"></i> Tools & Automation</h4>
+          <h4><i class="fa-solid fa-terminal"></i> Tools, Office & Media</h4>
           <ul>
-            <li><i class="fa-solid fa-chevron-right"></i> Git & GitHub Version Control</li>
-            <li><i class="fa-solid fa-chevron-right"></i> GitHub Actions (CI/CD Pipelines)</li>
-            <li><i class="fa-solid fa-chevron-right"></i> Linux (Debian OS Environment)</li>
-            <li><i class="fa-solid fa-chevron-right"></i> Python Scripting & Data Modeling</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Git, GitHub & CI/CD Pipelines</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Linux (Debian OS) & Python</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Microsoft Office & MS Excel</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Social Media & AI Workflows</li>
           </ul>
         </div>
         <div class="skill-box">
-          <h4><i class="fa-solid fa-globe"></i> Domain Knowledge</h4>
+          <h4><i class="fa-solid fa-users-gear"></i> Leadership & Consulting</h4>
           <ul>
-            <li><i class="fa-solid fa-chevron-right"></i> International Education & Advisory</li>
-            <li><i class="fa-solid fa-chevron-right"></i> Remote Sensing & Earth Datasets</li>
-            <li><i class="fa-solid fa-chevron-right"></i> Geographic Information Concepts</li>
-            <li><i class="fa-solid fa-chevron-right"></i> AI Engineering & Generative Workflows</li>
+            <li><i class="fa-solid fa-chevron-right"></i> International Education Advisory</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Professional Client Relations</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Teaching & Constructive Feedback</li>
+            <li><i class="fa-solid fa-chevron-right"></i> Sports Instruction & Youth Motivation</li>
           </ul>
         </div>
       </div>
